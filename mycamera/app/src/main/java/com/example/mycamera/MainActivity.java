@@ -6,13 +6,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Camera;
-import android.graphics.Canvas;
 import android.graphics.ImageFormat;
-import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
@@ -43,10 +38,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
-
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -77,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
     private HandlerThread mBackgroundThread;
     private Context mContext;
     private String path;
-    private ImageView rota;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     CameraDevice.StateCallback stateCallBack = new CameraDevice.StateCallback() {
@@ -146,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             if(jpegSizes != null && jpegSizes.length >0)
             {
                 width = jpegSizes[0].getWidth()*3/4;
-                height= jpegSizes[0].getHeight()*3/4;
+                height = jpegSizes[0].getHeight()*3/4;
             }
             final ImageReader reader = ImageReader.newInstance(width,height,ImageFormat.JPEG,1);
             List<Surface> outputSurface = new ArrayList<>(2);
@@ -163,31 +154,13 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onImageAvailable(ImageReader imageReader) {
                     Image image = null;
-                    image = reader.acquireLatestImage();
-                    ByteBuffer buffer = image.getPlanes()[0].getBuffer();
-                    byte[] bytes = new byte[buffer.remaining()];
-                    buffer.get(bytes);
                     try{
-                        /*Bitmap temp = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-                        Bitmap newBitmap = Bitmap.createBitmap(640,480,temp.getConfig());
-                        Canvas canvas = new Canvas(newBitmap);
-                        Paint paint = new Paint();
-                        Matrix m = new Matrix();
-                        m.setScale(-1,1);
-                        m.postTranslate(temp.getWidth(),0);
-                        m.postRotate(90,temp.getWidth()/2,temp.getHeight()/2);
-                        m.postTranslate(0,(temp.getWidth()-temp.getHeight())/2);
-                        canvas.drawBitmap(temp,m,paint);
-                        File newFile = new File(path);
-                        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(newFile));
-                        newBitmap.compress(Bitmap.CompressFormat.JPEG,100,bos);
-                        bos.flush();
-                        bos.close();
-                        temp.recycle();
-                        newBitmap.recycle();
-                        Uri uri = Uri.fromFile(file);
-                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri));*/
+                        image = reader.acquireLatestImage();
+                        ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+                        byte[] bytes = new byte[buffer.capacity()];
+                        buffer.get(bytes);
                         save(bytes);
+
 
                     } catch (FileNotFoundException e)
                     {
@@ -201,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
                         {
                             if(image != null)
                                 image.close();
-                            buffer.clear();
                         }
                     }
                 }
@@ -210,8 +182,6 @@ public class MainActivity extends AppCompatActivity {
                     try{
                         outputStream = new FileOutputStream(file);
                         outputStream.write(bytes);
-                        Uri uri = Uri.fromFile(file);
-                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri));
                     }finally {
                         if (outputStream != null)
                             outputStream.close();
@@ -245,7 +215,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (CameraAccessException e) {
             e.printStackTrace();
         }
-
     }
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void createCameraPreview(){

@@ -9,51 +9,30 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/btnCapture"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-2dp"
+        android:text="拍照" />
+
     <TextureView
+    android:layout_above="@+id/btnCapture"
+    android:id="@+id/textureView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 
-        android:id="@+id/textureView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="374dp"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="243dp"
-            android:layout_marginLeft="243dp"
-            android:layout_marginTop="299dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="27dp"
-            android:text="upload" />
-
-        <Button
-            android:id="@+id/btnCapture"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="299dp"
-            android:layout_marginEnd="249dp"
-            android:layout_marginRight="249dp"
-            android:layout_marginBottom="27dp"
-            android:text="拍照" />
-    </RelativeLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="upload" />
 
 </RelativeLayout>

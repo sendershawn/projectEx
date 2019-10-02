@@ -1,0 +1,196 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\d5dfb8f2082ddc5b494535b23907efd8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\092a73497709f224e52b0e562c29538e\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\fdf6048d667a3742496e87a73eda2733\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\97e18f861c83e29e0f52a605af16a392\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\168d257231ace28b0b058556483eaf2f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\20325a27221a5f3e75eca7455f658f06\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\1c4f2e69584a62fd1a8c23647c0fd095\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\6c646f9beca08c189f2193004ed31881\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\8021db2f12096e6d8aa9b938f028e6e9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\16e667a89b9b0d643199d3d4ad487881\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\fa4dea20e26626e7a4e38365099abab4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\1bd3ed3222dee3d850ea6fb37d247774\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2f7f3c8c6eb3fdd3c79132ef74c29a05\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2cd7853c964b3b29297099d72d7e7168\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\c0a92d0acc441dbf30793c68b8552fdc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4b9cb74b26c37101279a02e1849901de\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4159341aad87b60df44191cb6bd58b24\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\8d9066b30327544c8d94c4b14ee019be\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\b33364a06435aebc41830c9023d0f170\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4807ea9e4d6196b0b3b5e64640a9b287\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\419a59c848a5e22227531964e13ee56e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\07f3d37975fcdbe8a5b9b0d5b1416fa4\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\b76889298d50253077f7fd6b18483f14\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\d9d03e756fac0e6426cd30c3a4caf2cd\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\7fb26ea9ad31ecc8e7cabedb46838754\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2e7092d3e0dd0c37c56de3b934a4a51d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\815342e4972f70c2a1b35f433f4927bb\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+	package
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:4:5-35
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+	xmlns:dist
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:3:5-61
+	android:versionCode
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:1-34:12
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:5:5-64
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:5:22-62
+uses-permission#android.hardware.camera2.full
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:6:5-68
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:6:22-66
+uses-feature#android.hardware.camera2.full
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:7:19-63
+uses-feature#android.hardware.camera
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:8:5-59
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:8:19-57
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:9:5-66
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:9:22-64
+uses-permission#android.permission.WRITE_INTERNAL_STORAGE
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:12:22-77
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:13:22-77
+dist:module
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:16:5-40
+	dist:instant
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:16:18-37
+application
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:18:5-32:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\092a73497709f224e52b0e562c29538e\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\092a73497709f224e52b0e562c29538e\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4b9cb74b26c37101279a02e1849901de\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4b9cb74b26c37101279a02e1849901de\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4159341aad87b60df44191cb6bd58b24\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4159341aad87b60df44191cb6bd58b24\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4b9cb74b26c37101279a02e1849901de\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:23:9-35
+	android:label
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:21:9-41
+	android:roundIcon
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:22:9-54
+	android:icon
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:20:9-43
+	android:allowBackup
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:24:9-40
+activity#com.example.mycamera.MainActivity
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:25:9-31:20
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:25:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:26:13-30:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:27:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml:29:27-74
+uses-sdk
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\d5dfb8f2082ddc5b494535b23907efd8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\d5dfb8f2082ddc5b494535b23907efd8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\092a73497709f224e52b0e562c29538e\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\092a73497709f224e52b0e562c29538e\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\fdf6048d667a3742496e87a73eda2733\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\fdf6048d667a3742496e87a73eda2733\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\97e18f861c83e29e0f52a605af16a392\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\97e18f861c83e29e0f52a605af16a392\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\168d257231ace28b0b058556483eaf2f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\168d257231ace28b0b058556483eaf2f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\20325a27221a5f3e75eca7455f658f06\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\20325a27221a5f3e75eca7455f658f06\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\1c4f2e69584a62fd1a8c23647c0fd095\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\1c4f2e69584a62fd1a8c23647c0fd095\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\6c646f9beca08c189f2193004ed31881\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\6c646f9beca08c189f2193004ed31881\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\8021db2f12096e6d8aa9b938f028e6e9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\8021db2f12096e6d8aa9b938f028e6e9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\16e667a89b9b0d643199d3d4ad487881\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\16e667a89b9b0d643199d3d4ad487881\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\fa4dea20e26626e7a4e38365099abab4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\fa4dea20e26626e7a4e38365099abab4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\1bd3ed3222dee3d850ea6fb37d247774\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\1bd3ed3222dee3d850ea6fb37d247774\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2f7f3c8c6eb3fdd3c79132ef74c29a05\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2f7f3c8c6eb3fdd3c79132ef74c29a05\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2cd7853c964b3b29297099d72d7e7168\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2cd7853c964b3b29297099d72d7e7168\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\c0a92d0acc441dbf30793c68b8552fdc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\c0a92d0acc441dbf30793c68b8552fdc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4b9cb74b26c37101279a02e1849901de\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4b9cb74b26c37101279a02e1849901de\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4159341aad87b60df44191cb6bd58b24\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4159341aad87b60df44191cb6bd58b24\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\8d9066b30327544c8d94c4b14ee019be\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\8d9066b30327544c8d94c4b14ee019be\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\b33364a06435aebc41830c9023d0f170\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\b33364a06435aebc41830c9023d0f170\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4807ea9e4d6196b0b3b5e64640a9b287\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\4807ea9e4d6196b0b3b5e64640a9b287\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\419a59c848a5e22227531964e13ee56e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\419a59c848a5e22227531964e13ee56e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\07f3d37975fcdbe8a5b9b0d5b1416fa4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\07f3d37975fcdbe8a5b9b0d5b1416fa4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\b76889298d50253077f7fd6b18483f14\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\b76889298d50253077f7fd6b18483f14\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\d9d03e756fac0e6426cd30c3a4caf2cd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\d9d03e756fac0e6426cd30c3a4caf2cd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\7fb26ea9ad31ecc8e7cabedb46838754\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\7fb26ea9ad31ecc8e7cabedb46838754\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2e7092d3e0dd0c37c56de3b934a4a51d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\2e7092d3e0dd0c37c56de3b934a4a51d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\815342e4972f70c2a1b35f433f4927bb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\vence\.gradle\caches\transforms-2\files-2.1\815342e4972f70c2a1b35f433f4927bb\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\vence\Desktop\mycamera\app\src\main\AndroidManifest.xml

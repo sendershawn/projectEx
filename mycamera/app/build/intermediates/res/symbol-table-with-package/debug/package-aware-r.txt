@@ -680,6 +680,7 @@ id blocking
 id bottom
 id btnCapture
 id button
+id button4
 id buttonPanel
 id center
 id center_horizontal
@@ -716,6 +717,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView3
 id info
 id invisible
 id italic
@@ -828,6 +830,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_page2
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

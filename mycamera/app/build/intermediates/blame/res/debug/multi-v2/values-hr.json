@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\vence\\Desktop\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
+            "outputFile": "D:\\Desktop\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hr\\values-hr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\vence\\.gradle\\caches\\transforms-2\\files-2.1\\4b9cb74b26c37101279a02e1849901de\\res\\values-hr\\values-hr.xml",

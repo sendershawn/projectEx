@@ -123,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 upload();
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,Page2.class);
+                startActivity(intent);
             }
         });
     }

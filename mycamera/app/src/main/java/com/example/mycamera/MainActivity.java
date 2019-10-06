@@ -123,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 upload();
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this,Page2.class);
+                Intent intent = new Intent(MainActivity.this,Page2.class);
+                intent.putExtra("datapath",path);
                 startActivity(intent);
             }
         });
@@ -172,24 +172,9 @@ public class MainActivity extends AppCompatActivity {
                     buffer.get(bytes);
                     try{
                         /*Bitmap temp = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-                        Bitmap newBitmap = Bitmap.createBitmap(640,480,temp.getConfig());
-                        Canvas canvas = new Canvas(newBitmap);
-                        Paint paint = new Paint();
-                        Matrix m = new Matrix();
-                        m.setScale(-1,1);
-                        m.postTranslate(temp.getWidth(),0);
-                        m.postRotate(90,temp.getWidth()/2,temp.getHeight()/2);
-                        m.postTranslate(0,(temp.getWidth()-temp.getHeight())/2);
-                        canvas.drawBitmap(temp,m,paint);
-                        File newFile = new File(path);
-                        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(newFile));
-                        newBitmap.compress(Bitmap.CompressFormat.JPEG,100,bos);
-                        bos.flush();
-                        bos.close();
-                        temp.recycle();
-                        newBitmap.recycle();
-                        Uri uri = Uri.fromFile(file);
-                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri));*/
+
+
+                        */
                         save(bytes);
 
                     } catch (FileNotFoundException e)

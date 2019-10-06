@@ -47,6 +47,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -171,11 +172,14 @@ public class MainActivity extends AppCompatActivity {
                     byte[] bytes = new byte[buffer.remaining()];
                     buffer.get(bytes);
                     try{
-                        /*Bitmap temp = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                        Bitmap temp = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                        Matrix m =new Matrix();
+                        int width = temp.getWidth();
+                        int height = temp.getHeight();
+                        m.postRotate(90);
+                        Bitmap newBitmap = Bitmap.createBitmap(temp,0,0,width,height,m,true);
 
-
-                        */
-                        save(bytes);
+                        save(newBitmap);
 
                     } catch (FileNotFoundException e)
                     {
@@ -193,11 +197,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }
-                private void save(byte[] bytes) throws IOException {
-                    OutputStream outputStream = null;
+                private void save(Bitmap bm) throws IOException {
+                    FileOutputStream outputStream = null;
                     try{
                         outputStream = new FileOutputStream(file);
-                        outputStream.write(bytes);
+                        bm.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
+                        outputStream.flush();
                         Uri uri = Uri.fromFile(file);
                         sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri));
                     }finally {

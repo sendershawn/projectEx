@@ -370,10 +370,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void upload(){
-        Uri currImageURI;
+        message="";
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         UploadAsycTask uploadAsyncTask = new UploadAsycTask(mContext,path);
-        uploadAsyncTask.setMessage(message);
+        while(message!="") {
+            message = uploadAsyncTask.getMessage();
+        }
         Log.d("test",message);
         uploadAsyncTask.execute();
     }

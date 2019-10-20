@@ -143,8 +143,7 @@ public class UploadAsycTask extends AsyncTask<String, String, String> {
         super.onPostExecute(aVoid);
     }
 
-    public String setMessage(String mes) {
-        mes = message;
-        return mes;
+    public String getMessage() {
+        return  message;
     }
 }

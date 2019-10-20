@@ -39,12 +39,13 @@ String message;
             @Override
             public void onClick(View v) {
                 switch (message){
-                    case "angry" :
-                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.angry));
-                        break;
                     case "disgust" :
                         Textimage.setImageDrawable(getResources().getDrawable(R.drawable.disgust));
                         break;
+                    case "angry" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.angry));
+                        break;
+
                     case "happy" :
                         Textimage.setImageDrawable(getResources().getDrawable(R.drawable.happy));
                         break;

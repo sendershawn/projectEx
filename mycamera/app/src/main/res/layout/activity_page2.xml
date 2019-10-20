@@ -20,20 +20,28 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="168dp"
-            android:layout_height="55dp"
+            android:layout_width="68dp"
+            android:layout_height="59dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="123dp"
-            android:layout_marginLeft="123dp"
-            android:layout_marginTop="53dp"
-            android:layout_marginEnd="120dp"
-            android:layout_marginRight="120dp"
-            android:layout_marginBottom="59dp"
-            android:text="Button" />
+            android:layout_marginStart="182dp"
+            android:layout_marginLeft="182dp"
+            android:layout_marginTop="87dp"
+            android:layout_marginEnd="160dp"
+            android:layout_marginRight="160dp"
+            android:layout_marginBottom="21dp"
+            android:text="功能" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/angry" />
+
     </RelativeLayout>
+
 </RelativeLayout>

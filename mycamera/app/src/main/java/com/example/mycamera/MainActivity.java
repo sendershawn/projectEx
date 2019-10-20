@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     private String path;
     private ImageView rota;
-
+    private String message="";
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     CameraDevice.StateCallback stateCallBack = new CameraDevice.StateCallback() {
         @Override
@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 upload();
                 Intent intent = new Intent(MainActivity.this,Page2.class);
                 intent.putExtra("datapath",path);
+                intent.putExtra("message",message);
                 startActivity(intent);
             }
         });
@@ -372,7 +373,8 @@ public class MainActivity extends AppCompatActivity {
         Uri currImageURI;
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         UploadAsycTask uploadAsyncTask = new UploadAsycTask(mContext,path);
-        Log.d("test", path);
+        uploadAsyncTask.setMessage(message);
+        Log.d("test",message);
         uploadAsyncTask.execute();
     }
 

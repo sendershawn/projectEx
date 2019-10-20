@@ -5,16 +5,18 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class UploadAsycTask extends AsyncTask<String,String,Void> {
+public class UploadAsycTask extends AsyncTask<String, String, String> {
 
     private final String TAG = "ShelfAsyncTask";
     private DataOutputStream dos = null;
@@ -27,7 +29,7 @@ public class UploadAsycTask extends AsyncTask<String,String,Void> {
     private int maxBufferSize = 1 * 1024 * 1024;
     private int serverResponseCode = 0;
     private boolean result = false;
-
+    private String message;
     private Bitmap bitmap = null;
     private String filepath="/storage/emulated/0/Download/123.jpg";
 
@@ -47,7 +49,7 @@ public class UploadAsycTask extends AsyncTask<String,String,Void> {
         super.onPreExecute();
     }
     @Override
-    protected Void doInBackground(String... strings) {
+    protected String doInBackground(String... strings) {
         URL url = null;
         //String filepath=;
         File sourceFIle = new File(filepath);
@@ -104,10 +106,10 @@ public class UploadAsycTask extends AsyncTask<String,String,Void> {
             result = false;
 
             if (conn.getResponseCode()==200){
-//                JSONObject jsonObject = new JSONObject(GET(conn.getInputStream()));
-//                JSONArray jsonArray =jsonObject.getJSONArray("data");
-//                JSONObject object=jsonArray.getJSONObject(0);
-                Log.d("200","success");
+                InputStreamReader reader = new InputStreamReader(conn.getInputStream(),"UTF-8");
+                BufferedReader in = new BufferedReader(reader);
+                message = in.readLine();
+                Log.d("200",message);
                 result = true;
             }
 //            else if (conn.getResponseCode()==409){
@@ -137,7 +139,12 @@ public class UploadAsycTask extends AsyncTask<String,String,Void> {
         }
         return null;
     }
-    protected void onPostExecute(Void aVoid) {
+    protected void onPostExecute(String aVoid) {
         super.onPostExecute(aVoid);
+    }
+
+    public String setMessage(String mes) {
+        mes = message;
+        return mes;
     }
 }

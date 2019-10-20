@@ -7,6 +7,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -14,18 +15,61 @@ import android.widget.Toast;
 public class Page2 extends AppCompatActivity {
 String datapath;
 ImageView imageView;
+ImageView Textimage;
 Button get;
+String message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
-
+        Textimage = (ImageView)findViewById(R.id.imageView2);
         imageView = (ImageView)findViewById(R.id.imageView3);
         get = (Button)findViewById(R.id.button4);
         Bundle bundle = this.getIntent().getExtras();
         datapath = bundle.getString("datapath");
-        Toast.makeText(Page2.this,datapath, Toast.LENGTH_SHORT).show();
+        message = bundle.getString("message");
+
+        Toast.makeText(Page2.this,datapath+"++++++"+message, Toast.LENGTH_SHORT).show();
         imageView.setImageBitmap(getBitmap(datapath));
+        Textimage.setVisibility(View.GONE);
+
+        //Textimage.setImageDrawable(getResources().getDrawable(R.drawable.angry));
+
+        get.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (message){
+                    case "angry" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.angry));
+                        break;
+                    case "disgust" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.disgust));
+                        break;
+                    case "happy" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.happy));
+                        break;
+                    case "neutral" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.netrl));
+                        break;
+                    case "sad" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.sad));
+                        break;
+                    case "scared" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.scared));
+                        break;
+                    case "surprised" :
+                        Textimage.setImageDrawable(getResources().getDrawable(R.drawable.surprise));
+                        break;
+                    case  "Faild Uploaded!":
+                        Toast.makeText(Page2.this,"Faild Uploaded!", Toast.LENGTH_LONG).show();
+                        break;
+                    default:
+                        Toast.makeText(Page2.this,"NO FACE", Toast.LENGTH_LONG).show();
+                        break;
+                }
+                Textimage.setVisibility(View.VISIBLE);
+            }
+        });
 
     }
 

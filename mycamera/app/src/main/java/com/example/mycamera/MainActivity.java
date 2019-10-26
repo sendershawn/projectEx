@@ -43,6 +43,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -58,11 +59,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnCapture;
-    private Button uploadbtn;
+    private ImageButton btnCapture;
+    private ImageButton uploadbtn;
     private TextureView textureView;
     private String cameraId;
     private CameraDevice cameraDevice;
@@ -107,17 +109,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        uploadbtn = (Button)findViewById(R.id.button);
+        uploadbtn = (ImageButton)findViewById(R.id.button);
         textureView = (TextureView)findViewById(R.id.textureView);
         assert  textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
-        btnCapture = (Button)findViewById(R.id.btnCapture);
+        btnCapture = (ImageButton)findViewById(R.id.btnCapture);
+
+        uploadbtn.setEnabled(false);
 
         btnCapture.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
                 takePicture();
+                uploadbtn.setEnabled(true);
             }
         });
         uploadbtn.setOnClickListener(new View.OnClickListener() {
@@ -373,11 +378,15 @@ public class MainActivity extends AppCompatActivity {
         message="";
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         UploadAsycTask uploadAsyncTask = new UploadAsycTask(mContext,path);
-        while(message!="") {
-            message = uploadAsyncTask.getMessage();
-        }
         Log.d("test",message);
-        uploadAsyncTask.execute();
+        /*uploadAsyncTask.execute();
+        try{
+            message=uploadAsyncTask.get();
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }*/
     }
 
 }

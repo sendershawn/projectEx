@@ -629,6 +629,8 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable angry
+drawable button_takephoto
+drawable button_upload
 drawable disgust
 drawable happy
 drawable ic_launcher_background

@@ -14,6 +14,7 @@ import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.SurfaceTexture;
+import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageReader imageReader;
     //儲存檔案
     private File file;
-    private boolean flush;
+    private boolean flush=false;
     private static final int REQUEST_CAMERA_PERMISSION = 200;
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
@@ -118,15 +119,25 @@ public class MainActivity extends AppCompatActivity {
         assert  textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
         btnCapture = (ImageButton)findViewById(R.id.btnCapture);
-
         uploadbtn.setEnabled(false);
 
         flushlight.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                flush = true;
-                Toast.makeText(MainActivity.this,"click", Toast.LENGTH_SHORT).show();
+                if(flush==false)//開啟閃光燈
+                {
+                    flush = true;
+                    captureRequestBuilder.set(CaptureRequest.FLASH_MODE,CaptureRequest.FLASH_MODE_TORCH);
+                    flushlight.setBackground(getResources().getDrawable(R.drawable.button_fliushlight));
+                }
+                else//關閉閃光燈
+                {
+                    flush = false;
+                    captureRequestBuilder.set(CaptureRequest.FLASH_MODE,CaptureRequest.FLASH_MODE_OFF);
+                    flushlight.setBackground(getResources().getDrawable(R.drawable.button_fliushlight_off));
+                }
+                updatePreview();
             }
         });
 
@@ -179,9 +190,6 @@ public class MainActivity extends AppCompatActivity {
             final CaptureRequest.Builder captureBulider = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_STILL_CAPTURE);
             captureBulider.addTarget(reader.getSurface());
             //captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
-            if (flush==true){
-                captureBulider.set(CaptureRequest.FLASH_MODE,CaptureRequest.FLASH_MODE_TORCH);
-            }
 
 
             path=Environment.getExternalStorageDirectory() + "/Pictures/" + UUID.randomUUID().toString() + ".JPEG";
@@ -295,13 +303,14 @@ public class MainActivity extends AppCompatActivity {
     private void updatePreview() {
         if (cameraDevice == null)
             Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show();
-        captureRequestBuilder.set(CaptureRequest.CONTROL_MODE,CaptureRequest.CONTROL_MODE_AUTO);
         try{
             cameraCaptureSessions.setRepeatingRequest(captureRequestBuilder.build(),null,mBackgroundHandler);
         } catch (CameraAccessException e){
                 e.printStackTrace();
         }
     }
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void openCamera() {
         CameraManager manager = (CameraManager)getSystemService(Context.CAMERA_SERVICE);
         try{

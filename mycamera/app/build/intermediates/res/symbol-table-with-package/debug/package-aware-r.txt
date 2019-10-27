@@ -630,6 +630,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable angry
 drawable button_fliushlight
+drawable button_fliushlight_off
 drawable button_save
 drawable button_takephoto
 drawable button_upload

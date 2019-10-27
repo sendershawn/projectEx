@@ -54,6 +54,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.reflect.Parameter;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,8 +66,10 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity {
     private ImageButton btnCapture;
     private ImageButton uploadbtn;
+    private ImageButton flushlight;
     private TextureView textureView;
     private String cameraId;
+    private CameraManager manager;
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
@@ -74,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageReader imageReader;
     //儲存檔案
     private File file;
+    private boolean flush;
     private static final int REQUEST_CAMERA_PERMISSION = 200;
-    private boolean mFlashSupported;
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
     private Context mContext;
@@ -109,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        flushlight = (ImageButton)findViewById(R.id.button2);
         uploadbtn = (ImageButton)findViewById(R.id.button);
         textureView = (TextureView)findViewById(R.id.textureView);
         assert  textureView != null;
@@ -116,6 +120,16 @@ public class MainActivity extends AppCompatActivity {
         btnCapture = (ImageButton)findViewById(R.id.btnCapture);
 
         uploadbtn.setEnabled(false);
+
+        flushlight.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                flush = true;
+                Toast.makeText(MainActivity.this,"click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         btnCapture.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -138,13 +152,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)//??????
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)//????
-    private void takePicture() {
+    private  void takePicture() {
         if (cameraDevice == null)
             return;
-        CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+        manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
         try{
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraDevice.getId());
             Size[] jpegSizes = null;
@@ -165,7 +178,12 @@ public class MainActivity extends AppCompatActivity {
 
             final CaptureRequest.Builder captureBulider = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_STILL_CAPTURE);
             captureBulider.addTarget(reader.getSurface());
-            captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+            //captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+            if (flush==true){
+                captureBulider.set(CaptureRequest.FLASH_MODE,CaptureRequest.FLASH_MODE_TORCH);
+            }
+
+
             path=Environment.getExternalStorageDirectory() + "/Pictures/" + UUID.randomUUID().toString() + ".JPEG";
             Log.d("test", path );
             file = new File(path);
@@ -284,7 +302,6 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
         }
     }
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void openCamera() {
         CameraManager manager = (CameraManager)getSystemService(Context.CAMERA_SERVICE);
         try{

@@ -14,7 +14,12 @@
   </component>
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="pixel" />
+        <device id="pixel_3_xl" />
+        <device id="Nexus 5X" />
+        <device id="pixel_2" />
+      </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
@@ -90,34 +95,30 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="47" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml">
-          <provider editor-type-id="text-editor">
-            <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="377" column="9" lean-forward="true" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
+            <state relative-caret-position="425">
+              <caret line="131" column="45" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
               <folding>
-                <element signature="e#7851#8217#0" />
-                <element signature="method#createCameraPreview#0;class#MainActivity#0" />
-                <element signature="method#updatePreview#0;class#MainActivity#0" />
-                <element signature="method#openCamera#0;class#MainActivity#0" />
                 <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" />
                 <element signature="method#onResume#0;class#MainActivity#0" />
                 <element signature="method#onPause#0;class#MainActivity#0" />
@@ -129,24 +130,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5248#5249#0" expanded="true" />
-                <element signature="e#5278#5279#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1311">
+              <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/Page2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="570">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
@@ -160,27 +157,36 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>captureRequestBuilder</find>
+      <find>updatePreview</find>
+      <find>FLASH_MODE_TORCH</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/zoomimageview.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/ZoomImageView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/TouchImageView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MulitPointTouchListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/GestureImageView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/Page2.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1761" />
-    <option name="y" value="23" />
-    <option name="width" value="1874" />
-    <option name="height" value="1096" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="68" />
+    <option name="y" value="-15" />
+    <option name="width" value="1616" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -195,6 +201,16 @@
             <path>
               <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
+            <path>
+              <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
               <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
@@ -226,8 +242,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="313" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../post" />
+    <property name="device.picker.selection" value="CQ300068RY" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/MyApplication2" />
     <property name="settings.editor.selected.configurable" value="http.certificates" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.4.1" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1566295735363" />
@@ -340,11 +356,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="28" width="1616" height="1066" extended-state="6" />
+    <frame x="70" y="-8" width="1858" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.34640104" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18353726" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -353,15 +369,15 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.4974587" weight="0.3290461" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.6764057" weight="0.33333334" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.6764057" weight="0.3364486" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49872935" weight="0.3290461" />
-      <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" sideWeight="0.49872935" weight="0.3290461" />
+      <window_info anchor="bottom" id="Android Profiler" order="3" sideWeight="0.49872935" weight="0.3290461" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.8856417" weight="0.3290461" />
       <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49936467" weight="0.3290461" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.31619537" side_tool="true" visible="true" weight="0.34190783" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.3170189" side_tool="true" weight="0.33125648" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.68380463" visible="true" weight="0.34190783" />
-      <window_info anchor="bottom" id="Find" order="9" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.6829811" weight="0.18587747" />
+      <window_info active="true" anchor="bottom" id="Find" order="9" visible="true" weight="0.3290461" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -372,7 +388,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.37992376" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18353726" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -380,33 +396,24 @@
       <window_info id="Resources Explorer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.3290461" />
-      <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.3290461" />
-      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.4974587" weight="0.3290461" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.6764057" visible="true" weight="0.3364486" />
+      <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49872935" weight="0.3290461" />
+      <window_info anchor="bottom" id="Android Profiler" order="3" sideWeight="0.49872935" weight="0.3290461" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.8856417" weight="0.3290461" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49936467" weight="0.3290461" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.3170189" side_tool="true" weight="0.33125648" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Build" order="8" visible="true" weight="0.3397642" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.6829811" weight="0.18587747" />
+      <window_info active="true" anchor="bottom" id="Find" order="9" visible="true" weight="0.3290461" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Assistant" order="5" weight="0.32973316" />
+      <window_info anchor="right" id="Preview" order="6" />
     </layout-to-restore>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java</url>
-          <line>139</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/util/UUID.java">
@@ -431,14 +438,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_page2.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -466,56 +465,76 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/ZoomImageView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/TouchImageView.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="47" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="113" column="32" lean-forward="true" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MulitPointTouchListener.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/GestureImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="197" column="42" lean-forward="true" selection-start-line="197" selection-start-column="42" selection-end-line="197" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fdf6048d667a3742496e87a73eda2733/jars/classes.jar!/android/support/v4/app/FragmentActivity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="79" column="19" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml">
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/Page2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="377" column="9" lean-forward="true" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
+        <state relative-caret-position="425">
+          <caret line="131" column="45" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
           <folding>
-            <element signature="e#7851#8217#0" />
-            <element signature="method#createCameraPreview#0;class#MainActivity#0" />
-            <element signature="method#updatePreview#0;class#MainActivity#0" />
-            <element signature="method#openCamera#0;class#MainActivity#0" />
             <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" />
             <element signature="method#onResume#0;class#MainActivity#0" />
             <element signature="method#onPause#0;class#MainActivity#0" />
             <element signature="method#stopBackgroundThread#0;class#MainActivity#0" />
             <element signature="method#startBackgroundThread#0;class#MainActivity#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5248#5249#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/Page2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>

@@ -14,6 +14,7 @@ import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.SurfaceTexture;
+import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -43,6 +44,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -53,18 +55,22 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.reflect.Parameter;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnCapture;
-    private Button uploadbtn;
+    private ImageButton btnCapture;
+    private ImageButton uploadbtn;
+    private ImageButton flushlight;
     private TextureView textureView;
     private String cameraId;
+    private CameraManager manager;
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
@@ -72,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageReader imageReader;
     //儲存檔案
     private File file;
+    private boolean flush=false;
     private static final int REQUEST_CAMERA_PERMISSION = 200;
-    private boolean mFlashSupported;
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
     private Context mContext;
@@ -107,17 +113,41 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        uploadbtn = (Button)findViewById(R.id.button);
+        flushlight = (ImageButton)findViewById(R.id.button2);
+        uploadbtn = (ImageButton)findViewById(R.id.button);
         textureView = (TextureView)findViewById(R.id.textureView);
         assert  textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
-        btnCapture = (Button)findViewById(R.id.btnCapture);
+        btnCapture = (ImageButton)findViewById(R.id.btnCapture);
+        uploadbtn.setEnabled(false);
+
+        flushlight.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                if(flush==false)//開啟閃光燈
+                {
+                    flush = true;
+                    captureRequestBuilder.set(CaptureRequest.FLASH_MODE,CaptureRequest.FLASH_MODE_TORCH);
+                    flushlight.setBackground(getResources().getDrawable(R.drawable.button_fliushlight));
+                }
+                else//關閉閃光燈
+                {
+                    flush = false;
+                    captureRequestBuilder.set(CaptureRequest.FLASH_MODE,CaptureRequest.FLASH_MODE_OFF);
+                    flushlight.setBackground(getResources().getDrawable(R.drawable.button_fliushlight_off));
+                }
+                updatePreview();
+            }
+        });
+
 
         btnCapture.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
                 takePicture();
+                uploadbtn.setEnabled(true);
             }
         });
         uploadbtn.setOnClickListener(new View.OnClickListener() {
@@ -133,13 +163,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)//??????
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)//????
-    private void takePicture() {
+    private  void takePicture() {
         if (cameraDevice == null)
             return;
-        CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+        manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
         try{
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraDevice.getId());
             Size[] jpegSizes = null;
@@ -160,7 +189,9 @@ public class MainActivity extends AppCompatActivity {
 
             final CaptureRequest.Builder captureBulider = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_STILL_CAPTURE);
             captureBulider.addTarget(reader.getSurface());
-            captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+            //captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+
+
             path=Environment.getExternalStorageDirectory() + "/Pictures/" + UUID.randomUUID().toString() + ".JPEG";
             Log.d("test", path );
             file = new File(path);
@@ -272,13 +303,13 @@ public class MainActivity extends AppCompatActivity {
     private void updatePreview() {
         if (cameraDevice == null)
             Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show();
-        captureRequestBuilder.set(CaptureRequest.CONTROL_MODE,CaptureRequest.CONTROL_MODE_AUTO);
         try{
             cameraCaptureSessions.setRepeatingRequest(captureRequestBuilder.build(),null,mBackgroundHandler);
         } catch (CameraAccessException e){
                 e.printStackTrace();
         }
     }
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void openCamera() {
         CameraManager manager = (CameraManager)getSystemService(Context.CAMERA_SERVICE);
@@ -373,11 +404,15 @@ public class MainActivity extends AppCompatActivity {
         message="";
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         UploadAsycTask uploadAsyncTask = new UploadAsycTask(mContext,path);
-        while(message!="") {
-            message = uploadAsyncTask.getMessage();
-        }
         Log.d("test",message);
-        uploadAsyncTask.execute();
+        /*uploadAsyncTask.execute();
+        try{
+            message=uploadAsyncTask.get();
+        }catch (ExecutionException e){
+            e.printStackTrace();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }*/
     }
 
 }

@@ -629,6 +629,11 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable angry
+drawable button_fliushlight
+drawable button_fliushlight_off
+drawable button_save
+drawable button_takephoto
+drawable button_upload
 drawable disgust
 drawable happy
 drawable ic_launcher_background
@@ -687,6 +692,7 @@ id blocking
 id bottom
 id btnCapture
 id button
+id button2
 id button4
 id buttonPanel
 id center
@@ -698,6 +704,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id constraintLayout
 id content
 id contentPanel
 id custom
@@ -724,6 +731,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageButton
 id imageView2
 id imageView3
 id info

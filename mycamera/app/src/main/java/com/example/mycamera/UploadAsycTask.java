@@ -111,7 +111,6 @@ public class UploadAsycTask extends AsyncTask<String, String, String> {
                 message = in.readLine();
                 Log.d("200",message);
                 result = true;
-                return  message;
             }
 //            else if (conn.getResponseCode()==409){
 //                JSONObject jsonObject = new JSONObject(GET(conn.getErrorStream()));
@@ -144,5 +143,7 @@ public class UploadAsycTask extends AsyncTask<String, String, String> {
         super.onPostExecute(aVoid);
     }
 
-
+    public String getMessage() {
+        return  message;
+    }
 }

@@ -406,6 +406,7 @@ color material_grey_600
 color material_grey_800
 color material_grey_850
 color material_grey_900
+color mygray
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark_material_dark
@@ -629,10 +630,20 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable angry
+drawable bg_ground
+drawable button_fliushlight
+drawable button_fliushlight_off
+drawable button_save
+drawable button_takephoto
+drawable button_upload
+drawable camera
 drawable disgust
 drawable happy
+drawable ic_file_upload
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_photo_camera
+drawable ic_switch_camera
 drawable netrl
 drawable notification_action_background
 drawable notification_bg
@@ -646,6 +657,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable photolibrary
 drawable sad
 drawable scared
 drawable surprise
@@ -686,9 +698,10 @@ id beginning
 id blocking
 id bottom
 id btnCapture
-id button
 id button4
 id buttonPanel
+id cameraBtn
+id cameraSwitch
 id center
 id center_horizontal
 id center_vertical
@@ -714,7 +727,9 @@ id expanded_menu
 id fill
 id fill_horizontal
 id fill_vertical
+id flashBtn
 id forever
+id galleryBtn
 id gone
 id group_divider
 id groups
@@ -724,6 +739,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageButton
 id imageView2
 id imageView3
 id info
@@ -800,6 +816,7 @@ id top
 id topPanel
 id uniform
 id up
+id uploadBtn
 id useLogo
 id withText
 id wrap
@@ -837,6 +854,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_camera_acitivity
 layout activity_main
 layout activity_page2
 layout notification_action

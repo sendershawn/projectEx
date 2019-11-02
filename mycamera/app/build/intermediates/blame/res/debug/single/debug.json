@@ -72,12 +72,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\layout-v16\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\layout-v16\\notification_template_custom_big.xml"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_switch_track.xml.flat",
@@ -120,12 +120,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable_scared.png.flat",
-        "source": "D:\\projectEx-master\\mycamera\\app\\src\\main\\res\\drawable\\scared.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable_scared.png.flat",
+        "source": "D:\\projectEx-master\\mycamera\\app\\src\\main\\res\\drawable\\scared.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -140,12 +140,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_photo_camera.xml.flat",
         "source": "D:\\projectEx-master\\mycamera\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_photo_camera.xml"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_mode_bar.xml.flat",
@@ -216,12 +216,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_photolibrary.xml.flat",
-        "source": "D:\\projectEx-master\\mycamera\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\photolibrary.xml"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
         "source": "D:\\projectEx-master\\mycamera\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_photolibrary.xml.flat",
+        "source": "D:\\projectEx-master\\mycamera\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\photolibrary.xml"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -232,16 +232,16 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-mdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_clear_material.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-mdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
@@ -252,24 +252,24 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable_netrl.png.flat",
-        "source": "D:\\projectEx-master\\mycamera\\app\\src\\main\\res\\drawable\\netrl.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable_netrl.png.flat",
+        "source": "D:\\projectEx-master\\mycamera\\app\\src\\main\\res\\drawable\\netrl.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -364,12 +364,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\color-v21\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_camera.png.flat",
         "source": "D:\\projectEx-master\\mycamera\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\camera.png"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_switch_camera.png.flat",
@@ -400,12 +400,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -436,12 +436,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_item_layout.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -544,12 +544,12 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -616,20 +616,20 @@
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_header_item_layout.xml.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
-        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",

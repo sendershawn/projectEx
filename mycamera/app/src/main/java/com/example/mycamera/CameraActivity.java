@@ -16,6 +16,7 @@ import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
+import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
@@ -29,6 +30,7 @@ import android.os.HandlerThread;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.view.MarginLayoutParamsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -38,11 +40,13 @@ import android.view.Gravity;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -87,6 +91,7 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
     private String path;
     private ImageView rota;
     private String message = "init";
+
 
 
     /*********CALLBACK**********/
@@ -256,7 +261,14 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
     /***********調整螢幕實作2.0***********/
     private void updateTextureViewSize(int viewWidth, int viewHeight) {
         Log.d("螢幕", "TextureView Width : " + viewWidth + " TextureView Height : " + viewHeight);
-        textureView.setLayoutParams(new LinearLayout.LayoutParams(viewWidth, viewHeight));
+        textureView.setLayoutParams(new RelativeLayout.LayoutParams(viewWidth, viewHeight));
+        /**********下調view**********/
+        int dpValue = 70; // margin in dips
+        float d = this.getResources().getDisplayMetrics().density;
+        int margin = (int)(dpValue * d);
+        RelativeLayout.LayoutParams relativeParams = (RelativeLayout.LayoutParams)textureView.getLayoutParams();
+        relativeParams.setMargins(0, margin, 0, 0);  // left, top, right, bottom
+        textureView.setLayoutParams(relativeParams);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)//版本API
@@ -288,8 +300,9 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             outputSurface.add(new Surface(textureView.getSurfaceTexture()));
 
             final CaptureRequest.Builder captureBulider = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_STILL_CAPTURE);
+            //final CaptureRequest.Builder captureBulider = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_PREVIEW);
             captureBulider.addTarget(reader.getSurface());
-            //captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+            captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
 
             /**********儲存地址**********/
 
@@ -334,6 +347,8 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
                         }
                     }
                 }
+
+                /**********save**********/
 
                 private void save(Bitmap bm) throws IOException {
                     FileOutputStream outputStream = null;
@@ -409,6 +424,8 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         }
     }
 
+    /***********更新預覽**********/
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void updatePreview() {
         if (cameraDevice == null)
@@ -433,7 +450,6 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             /***********螢幕預覽2.0************/
 
             setAspectRatioTextureView(imageDimesion.getHeight(),imageDimesion.getWidth());
-
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
@@ -443,6 +459,7 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         }
     }
 
+    /**********surface Listener*********/
 
     TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -468,6 +485,8 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         }
     };
 
+    /**********resume**********/
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onResume() {
@@ -478,11 +497,23 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         else
             textureView.setSurfaceTextureListener(textureListener);
     }
+
+
     @Override
     protected void onPause() {
+
+        /**********relese when activity change**********/
+
+        if (cameraDevice != null) {
+            cameraDevice.close();
+            cameraDevice = null;
+        }
         stopBackgroundThread();
         super.onPause();
     }
+
+    /**********background thread stop*********/
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void stopBackgroundThread() {
         mBackgroundThread.quitSafely();
@@ -494,6 +525,9 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             e.printStackTrace();
         }
     }
+
+    /**********background thread open*********/
+
     private void startBackgroundThread() {
         mBackgroundThread = new HandlerThread("Camera Background");
         mBackgroundThread.start();
@@ -524,7 +558,4 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         uploadAsyncTask.delegate = this;
         uploadAsyncTask.execute();
     }
-
-
-
 }

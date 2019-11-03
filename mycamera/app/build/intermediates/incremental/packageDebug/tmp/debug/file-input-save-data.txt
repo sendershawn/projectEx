@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Wed Oct 30 10:46:58 CST 2019
+#Mon Nov 04 01:59:55 CST 2019
 0.baseType=DIRECTORY
-0.base=D\:\\projectEx-master\\mycamera\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+0.base=D\:\\github\\projectEx\\mycamera\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 0.path=classes.dex
 0.set=DEX
 count=1

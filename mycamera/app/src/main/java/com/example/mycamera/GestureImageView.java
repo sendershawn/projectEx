@@ -50,6 +50,15 @@ public class GestureImageView extends ImageView implements View.OnTouchListener 
 
     }
 
+    public PointF sizex(){
+        return scaleSize;
+    }
+
+    public PointF locationx(){
+        PointF lo = new PointF(start.x - relativePoint.x * scaleSize.x -100, start.y - relativePoint.y * scaleSize.y);
+        return  lo;
+    }
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -63,6 +72,7 @@ public class GestureImageView extends ImageView implements View.OnTouchListener 
             Log.e("no drawable","drawable is nullPtr");
         }else {
             imageSize=new PointF(drawable.getMinimumWidth(),drawable.getMinimumHeight());
+            Log.d("test5", String.valueOf(imageSize));
         }
 
         FitCenter();
@@ -131,7 +141,7 @@ public class GestureImageView extends ImageView implements View.OnTouchListener 
                             relativePoint.set(( start.x-curPoint.x )/ scaleSize.x,(start.y-curPoint.y)/scaleSize.y);
 
                             setImageScale(new PointF(originScale.x * rationZoomIn, originScale.y * rationZoomIn));
-                            setImageTranslation(new PointF(start.x - relativePoint.x * scaleSize.x, start.y - relativePoint.y * scaleSize.y));
+                            setImageTranslation(new PointF(start.x - relativePoint.x * scaleSize.x , start.y - relativePoint.y * scaleSize.y));
                         }else {
                             curMode=ZoomMode.Ordinary;
                             FitCenter();
@@ -198,14 +208,13 @@ public class GestureImageView extends ImageView implements View.OnTouchListener 
         matrix.setScale(scale.x, scale.y);
         scaleSize.set(scale.x*imageSize.x,scale.y*imageSize.y);
         this.setImageMatrix(matrix);
-
     }
 
     /**
      * 根據偏移量改變圖片位置
      * @param offset
      */
-    public  void setImageTranslation(PointF offset){
+    public void setImageTranslation(PointF offset){
         matrix.postTranslate(offset.x, offset.y);
         curPoint.set(offset);
         this.setImageMatrix(matrix);

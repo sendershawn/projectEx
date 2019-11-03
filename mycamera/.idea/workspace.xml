@@ -87,7 +87,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="HAAZCY02R781HNE" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="4.7_WXGA_API_24" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -100,11 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="19">
+              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -121,20 +118,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/CameraActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="304" column="12" selection-start-line="304" selection-start-column="12" selection-end-line="304" selection-end-column="12" />
+            <state relative-caret-position="2146">
+              <caret line="308" column="97" selection-start-line="308" selection-start-column="97" selection-end-line="308" selection-end-column="97" />
               <folding>
-                <element signature="e#13957#14432#0" expanded="true" />
-                <element signature="e#14431#14432#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#6010#6721#0" expanded="true" />
+                <element signature="e#6720#6721#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_camera_acitivity.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="515">
               <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
             </state>
           </provider>
@@ -144,7 +152,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="874">
               <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -204,36 +212,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Intent</find>
-      <find>setSurfaceTextureListener</find>
-      <find>REQUEST_CAMERA_PERMISSION</find>
-      <find>toast</find>
-      <find>looper</find>
-      <find>startP</find>
-      <find>mContext</find>
-      <find>uploadbtn</find>
-      <find>path</find>
-      <find>init</find>
-      <find>serverResponseCode</find>
-      <find>cameraId</find>
-      <find>timeout</find>
-      <find>close</find>
-      <find>cameraDevice</find>
-      <find>Dim</find>
-      <find>Di</find>
-      <find>frameLa</find>
-      <find>resize</find>
-      <find>Dimes</find>
-      <find>Layoutpara</find>
-      <find>controlpa</find>
-      <find>ope</find>
-      <find>CameraDevice</find>
-      <find>set</find>
       <find>1.0</find>
       <find>2.0</find>
       <find>under</find>
       <find>Onpa</find>
       <find>stopBackgroundThread</find>
+      <find>flashlight</find>
+      <find>Bul</find>
+      <find>builder</find>
+      <find>session</find>
+      <find>captureRequestBuilder</find>
+      <find>sessions</find>
+      <find>TEmp</find>
+      <find>request</find>
+      <find>CaptureRequest</find>
+      <find>capturesession</find>
+      <find>checkedid</find>
+      <find>capturerequ</find>
+      <find>capturerequestbu</find>
+      <find>setflash</find>
+      <find>captur</find>
+      <find>capture</find>
+      <find>flash</find>
+      <find>setFlashlight</find>
+      <find>FLASH</find>
+      <find>Builder</find>
+      <find>setflas</find>
+      <find>mode</find>
+      <find>flashOn</find>
+      <find>set</find>
+      <find>captureRequestBui</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -277,25 +285,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="mycamera" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
             <path>
               <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -304,8 +296,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,7 +445,7 @@
       <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49936467" weight="0.3281471" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.3230563" side_tool="true" weight="0.40311173" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.6769437" weight="0.11032532" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.6769437" weight="0.37340876" />
       <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49865952" weight="0.3281471" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -558,14 +551,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_camera_new.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/CameraPreview.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/PassResultInterface.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -593,6 +578,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/AsyncResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/emotionDetect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -616,55 +633,29 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/AsyncResponse.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="19">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_camera_acitivity.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="515">
           <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/CameraActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="304" column="12" selection-start-line="304" selection-start-column="12" selection-end-line="304" selection-end-column="12" />
+        <state relative-caret-position="2146">
+          <caret line="308" column="97" selection-start-line="308" selection-start-column="97" selection-end-line="308" selection-end-column="97" />
           <folding>
-            <element signature="e#13957#14432#0" expanded="true" />
-            <element signature="e#14431#14432#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#6010#6721#0" expanded="true" />
+            <element signature="e#6720#6721#0" expanded="true" />
           </folding>
         </state>
       </provider>

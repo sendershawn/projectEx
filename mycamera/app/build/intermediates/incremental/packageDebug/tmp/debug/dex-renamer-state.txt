@@ -1,4 +1,4 @@
-#Sat Nov 02 16:42:28 CST 2019
+#Sun Nov 03 17:15:08 CST 2019
 base.0=D\:\\projectEx-master\\mycamera\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

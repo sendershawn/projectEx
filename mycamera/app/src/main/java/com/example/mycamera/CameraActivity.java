@@ -30,22 +30,19 @@ import android.os.HandlerThread;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.MarginLayoutParamsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Size;
-import android.view.Gravity;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -70,21 +67,25 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
     /*預覽*/
     private Size mPreviewSize;
     private TextureView textureView;
-
+    /*閃光*/
+    private boolean flashOn=false;
+    private CaptureRequest.Key<Integer> mode=CaptureRequest.CONTROL_AE_MODE;
+    private int mode_type=CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH;
     /*相機*/
+    private int checkedId=0;
     private String mCameraId;
     private CameraManager manager;
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
-    private Size imageDimesion;
+    private CaptureRequest captureRequest;
+    private Size imageDimension;
     public static final String CAMERA_FRONT = "1";
     public static final String CAMERA_BACK = "0";
     private static  String cameraId = CAMERA_BACK;
     private ImageReader imageReader;
     //儲存檔案
     private File file;
-    private boolean flush = false;
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
     private Context mContext;
@@ -175,18 +176,19 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                if (flush == false)//開啟閃光燈
-                {
-                    flush = true;
-                    captureRequestBuilder.set(CaptureRequest.FLASH_MODE, CaptureRequest.FLASH_MODE_TORCH);
-                    flashlight.setBackground(getResources().getDrawable(R.drawable.button_fliushlight));
-                } else//關閉閃光燈
-                {
-                    flush = false;
-                    captureRequestBuilder.set(CaptureRequest.FLASH_MODE, CaptureRequest.FLASH_MODE_OFF);
+                if(flashOn ==true) {
+                   // setFlashlight();
+                    Log.e("FlashOn:","true->false");
                     flashlight.setBackground(getResources().getDrawable(R.drawable.button_fliushlight_off));
+                    flashOn =false;
+                }else{
+                   // setFlashlight();
+                    Log.e("FlashOn:","false->true");
+                    flashlight.setBackground(getResources().getDrawable(R.drawable.button_fliushlight));
+                    flashOn =true;
                 }
-                updatePreview();
+
+
             }
         });
 
@@ -259,10 +261,13 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
     }
 
     /***********調整螢幕實作2.0***********/
+
     private void updateTextureViewSize(int viewWidth, int viewHeight) {
         Log.d("螢幕", "TextureView Width : " + viewWidth + " TextureView Height : " + viewHeight);
         textureView.setLayoutParams(new RelativeLayout.LayoutParams(viewWidth, viewHeight));
+
         /**********下調view**********/
+
         int dpValue = 70; // margin in dips
         float d = this.getResources().getDisplayMetrics().density;
         int margin = (int)(dpValue * d);
@@ -299,10 +304,14 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             outputSurface.add(reader.getSurface());
             outputSurface.add(new Surface(textureView.getSurfaceTexture()));
 
-            final CaptureRequest.Builder captureBulider = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_STILL_CAPTURE);
-            //final CaptureRequest.Builder captureBulider = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_PREVIEW);
-            captureBulider.addTarget(reader.getSurface());
-            captureBulider.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+            final CaptureRequest.Builder captureBuilder = cameraDevice.createCaptureRequest(cameraDevice.TEMPLATE_STILL_CAPTURE);
+            captureBuilder.addTarget(reader.getSurface());
+            captureBuilder.set(CaptureRequest.CONTROL_AF_MODE,CaptureRequest.CONTROL_AF_MODE_AUTO);
+            /************FLASH實作**********/
+            setFlashlight();
+            captureBuilder.set(mode,mode_type);
+
+            cameraCaptureSessions.stopRepeating();
 
             /**********儲存地址**********/
 
@@ -377,7 +386,7 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
                 @Override
                 public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
                     try {
-                        cameraCaptureSession.capture(captureBulider.build(), captureListener, mBackgroundHandler);
+                        cameraCaptureSession.capture(captureBuilder.build(), captureListener, mBackgroundHandler);
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }
@@ -401,10 +410,11 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         try {
             SurfaceTexture texture = textureView.getSurfaceTexture();
             assert texture != null;
-            texture.setDefaultBufferSize(imageDimesion.getWidth(), imageDimesion.getHeight());
+            texture.setDefaultBufferSize(imageDimension.getWidth(), imageDimension.getHeight());
             Surface surface = new Surface(texture);
             captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
             captureRequestBuilder.addTarget(surface);
+            captureRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
             cameraDevice.createCaptureSession(Arrays.asList(surface), new CameraCaptureSession.StateCallback() {
                 @Override
                 public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
@@ -445,15 +455,16 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map != null;
-            imageDimesion = map.getOutputSizes(SurfaceTexture.class)[0];
+            imageDimension = map.getOutputSizes(SurfaceTexture.class)[0];
 
             /***********螢幕預覽2.0************/
 
-            setAspectRatioTextureView(imageDimesion.getHeight(),imageDimesion.getWidth());
+            setAspectRatioTextureView(imageDimension.getHeight(), imageDimension.getWidth());
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
             manager.openCamera(cameraId, stateCallBack, null);
+
         } catch (CameraAccessException e) {
             e.printStackTrace();
         }
@@ -465,7 +476,8 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
         public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-            //resize(textureView); /**********螢幕預覽比例1.0*********/
+            /**********螢幕預覽比例1.0*********/
+            //resize(textureView);
             openCamera();
         }
 
@@ -502,7 +514,7 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
     @Override
     protected void onPause() {
 
-        /**********relese when activity change**********/
+        /**********release when activity change**********/
 
         if (cameraDevice != null) {
             cameraDevice.close();
@@ -558,4 +570,22 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         uploadAsyncTask.delegate = this;
         uploadAsyncTask.execute();
     }
+    /**********Flash設定**********/
+    private void setFlashlight(){
+        if(flashOn) {
+            mode=CaptureRequest.FLASH_MODE;
+            Log.d("modeFLash",Integer.toString(mode_type));
+            mode_type=CaptureRequest.FLASH_MODE_SINGLE;
+            Log.d("modeFLash",Integer.toString(mode_type));
+        }
+        else{
+            mode=CaptureRequest.CONTROL_AE_MODE;
+            mode_type=CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH;
+
+        }
+
+    }
+
+
+
 }

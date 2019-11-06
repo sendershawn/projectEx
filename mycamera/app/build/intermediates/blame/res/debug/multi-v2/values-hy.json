@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\github\\projectEx\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
+            "outputFile": "D:\\Github\\projectEx\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy\\values-hy.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vence\\.gradle\\caches\\transforms-2\\files-2.1\\4b9cb74b26c37101279a02e1849901de\\res\\values-hy\\values-hy.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\values-hy\\values-hy.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vence\\.gradle\\caches\\transforms-2\\files-2.1\\d5dfb8f2082ddc5b494535b23907efd8\\res\\values-hy\\values-hy.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\values-hy\\values-hy.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

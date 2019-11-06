@@ -638,11 +638,13 @@ drawable button_takephoto
 drawable button_upload
 drawable camera
 drawable disgust
+drawable facesemotions
 drawable happy
 drawable ic_file_upload
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_photo_camera
+drawable ic_save
 drawable ic_switch_camera
 drawable netrl
 drawable notification_action_background
@@ -669,6 +671,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id TextImage
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -698,7 +701,6 @@ id beginning
 id blocking
 id bottom
 id btnCapture
-id button4
 id buttonPanel
 id cameraBtn
 id cameraSwitch
@@ -731,6 +733,7 @@ id flashBtn
 id forever
 id galleryBtn
 id gone
+id groupView
 id group_divider
 id groups
 id home
@@ -739,9 +742,6 @@ id icon
 id icon_group
 id ifRoom
 id image
-id imageButton
-id imageView2
-id imageView3
 id info
 id invisible
 id italic
@@ -753,6 +753,7 @@ id list_item
 id message
 id middle
 id multiply
+id myPhoto
 id never
 id none
 id normal
@@ -769,6 +770,7 @@ id radio
 id right
 id right_icon
 id right_side
+id saveBtn
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -784,6 +786,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id setSticker
 id shortcut
 id showCustom
 id showHome

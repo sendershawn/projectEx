@@ -146,7 +146,7 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
         message=output;
         Log.d("正確信息:message",message);
         Intent intent = new Intent(CameraActivity.this, emotionDetect.class);
-        intent.putExtra("datapath", path);
+        intent.putExtra("dataPath", path);
         intent.putExtra("message", message);
         startActivity(intent);
     }
@@ -294,7 +294,7 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             /**********圖片大小**********/
 
             int width = 1920;
-            int height = 1080;
+            int height = 1440;
             if (jpegSizes != null && jpegSizes.length > 0) {
                 width = jpegSizes[0].getWidth() * 3 / 4;
                 height = jpegSizes[0].getHeight() * 3 / 4;

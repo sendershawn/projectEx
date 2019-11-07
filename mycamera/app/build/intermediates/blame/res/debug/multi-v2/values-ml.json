@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Github\\projectEx\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
+            "outputFile": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\values-ml\\values-ml.xml",

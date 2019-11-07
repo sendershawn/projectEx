@@ -109,6 +109,8 @@ public class emotionDetect extends AppCompatActivity {
         textImage.setVisibility(View.GONE);
 
 
+
+
         Toast.makeText(emotionDetect.this, dataPath +"----------"+message, Toast.LENGTH_SHORT).show();
 
         /**********繪圖按鈕**********/
@@ -180,17 +182,17 @@ public class emotionDetect extends AppCompatActivity {
                             }
                         });
 
-                        Log.i("動態比例", scale + "");
+                     /*   Log.i("動態比例", scale + "");
                         Log.i("動態比例", textImageHeight*scale + "");
-                        Log.i("動態比例", textImageWidth*scale + "");
+                        Log.i("動態比例", textImageWidth*scale + "");*/
 
                     }
                 });
 
-                Log.i("myPhotoScale(X,Y)", myPhotoHeight+ "");
+              /*  Log.i("myPhotoScale(X,Y)", myPhotoHeight+ "");
                 Log.i("myPhotoScale(X,Y)", myPhotoWidth+ "");
                 Log.i("初始TextImage 長寬", textImageHeight + "");
-                Log.i("初始TextImage 長寬", textImageWidth + "");
+                Log.i("初始TextImage 長寬", textImageWidth + "");*/
 
             }
         });
@@ -212,6 +214,7 @@ public class emotionDetect extends AppCompatActivity {
         Log.i("TAG(X,Y)", positionX + "");
         Log.i("TAG(X,Y)", positionY + "");;
         Matrix matrix = new Matrix();
+        matrix.postRotate(textImage.getRotation());
         matrix.postTranslate(positionX*myPhotoHeightScale,positionY*myPhotoHeightScale);//根據螢幕比設定
 
         /*********繪圖**********/

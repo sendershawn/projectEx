@@ -39,6 +39,8 @@ public class ScrollGestureListener extends GestureDetector.SimpleOnGestureListen
         this.viewGroup = viewGroup;
     }
 
+    /**********設定XY LOCATION*********/
+
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
 
@@ -90,9 +92,10 @@ public class ScrollGestureListener extends GestureDetector.SimpleOnGestureListen
         }
     }
 
+    /********計算移動的最大距離*********/
+
     @Override
     public boolean onDown(MotionEvent e) {
-        //计算能移动的最大距离
         if (!isCalculate) {
             isCalculate = true;
             maxTranslationLeft = targetView.getLeft();

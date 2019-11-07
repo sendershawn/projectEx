@@ -22,12 +22,12 @@
                     android:layout_gravity="center"
                     tools:ignore="ContentDescription" />
                 <ImageView
-                    android:layout_gravity="center"
                     android:id="@+id/TextImage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/ic_photo_camera"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="center"
                     tools:ignore="ContentDescription" />
         </FrameLayout>
 
@@ -38,19 +38,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|bottom"
+            android:src="@drawable/ic_insert_emoticon"
+            android:background="@color/mygray"
             android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:src="@drawable/facesemotions"
-            android:background="@color/mygray"/>
+            android:layout_marginStart="8dp" />
+        <ImageButton
+            android:id="@+id/checkBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:src="@drawable/ic_check_circle"
+            android:background="@color/mygray"
+            android:layout_marginStart="108dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ImageButton
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:background="@color/mygray"
+            android:src="@drawable/ic_close"
+            android:layout_marginEnd="108dp"
+            android:layout_marginBottom="8dp"/>
+
         <ImageButton
             android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
             android:src="@drawable/ic_save"
+            android:layout_gravity="bottom|right"
             android:background="@color/mygray"
             android:layout_marginBottom="8dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginEnd="8dp"/>
+        <ImageButton
+            android:id="@+id/textStringBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_text_fields"
+            android:layout_gravity="bottom|left"
+            android:background="@color/mygray"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="108dp"/>
+        <ImageButton
+            android:id="@+id/removeBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyer"
+            android:layout_gravity="bottom|right"
+            android:background="@color/mygray"
+            android:layout_marginEnd="108dp"
+            android:layout_marginBottom="8dp"/>
 
 
 

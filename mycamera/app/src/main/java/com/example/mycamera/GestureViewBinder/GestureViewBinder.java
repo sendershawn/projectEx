@@ -18,12 +18,12 @@ import java.util.TimerTask;
 
 public class GestureViewBinder {
 
-    private ScaleGestureBinder scaleGestureBinder;
-    private ScrollGestureBinder scrollGestureBinder;
-    private ScaleGestureListener scaleGestureListener;
-    private ScrollGestureListener scrollGestureListener;
-    private View targetView;
-    private ViewGroup viewGroup;
+    private ScaleGestureBinder scaleGestureBinder=null;
+    private ScrollGestureBinder scrollGestureBinder=null;
+    private ScaleGestureListener scaleGestureListener=null;
+    private ScrollGestureListener scrollGestureListener=null;
+    private View targetView=null;
+    private ViewGroup viewGroup=null;
     private boolean isScaleEnd = true;
     private OnScaleListener onScaleListener;
 
@@ -46,7 +46,6 @@ public class GestureViewBinder {
         scaleGestureBinder = new ScaleGestureBinder(context, scaleGestureListener);
         scrollGestureBinder = new ScrollGestureBinder(context, scrollGestureListener);
         targetView.setClickable(false);
-
         viewGroup.setOnTouchListener(new View.OnTouchListener() {
             @RequiresApi(api = Build.VERSION_CODES.ECLAIR)
             @SuppressLint("ClickableViewAccessibility")
@@ -134,15 +133,15 @@ public class GestureViewBinder {
         double delta_y;
         /**** if 計算手指位置避免旋轉過頭****/
         if (event.getX(0)<event.getX(1)) {
-          delta_x = targetView.getX()- event.getX(1);
+           delta_x = targetView.getX()- event.getX(1);
            delta_y = targetView.getY()- event.getY(1);
         }else {
             delta_x = targetView.getX()- event.getX(0);
             delta_y = targetView.getY()- event.getY(0);
-
         }
         radians = Math.atan2(delta_y, delta_x);
-        return (float) Math.toDegrees(radians)/(float)(2.5);
+
+        return (float) Math.toDegrees(radians)/(float)(3);
     }
 
     /*********旋轉工具**********/

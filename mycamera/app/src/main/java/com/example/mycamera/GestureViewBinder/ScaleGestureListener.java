@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 public class ScaleGestureListener implements ScaleGestureDetector.OnScaleGestureListener /*, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener */ {
 
-    private View targetView;
+    private View targetView=null;
     private float scale = 1;
     private float scaleTemp = 1;
     private boolean isFullGroup = false;

@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 public class ScrollGestureListener extends GestureDetector.SimpleOnGestureListener {
 
     private float scale = 1;
-    private View targetView;
-    private ViewGroup viewGroup;
+    private View targetView=null;
+    private ViewGroup viewGroup=null;
     private float distanceXTemp = 0;
     private float distanceYTemp = 0;
 

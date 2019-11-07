@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -61,14 +60,21 @@ public class emotionDetect extends AppCompatActivity {
 
     Context mContext;
     ImageView myPhoto;
-    ImageView textImage;
-    ImageButton savePhoto;
-    ImageButton setSticker;
+    ImageView textImage ;
+
+    ImageButton savePhotoBtn;
+    ImageButton setStickerBtn;
+    ImageButton setTextStingBtn;
+    ImageButton removeBackBtn;
+    ImageButton checkBtn;
+    ImageButton cancelBtn;
+
+
     FrameLayout groupView;
-    Drawable frontPic;
+
+    Bitmap resultBitmap;
 
     GestureViewBinder bind;
-
 
     /*********位置及大小參數**********/
     /*********** textImageView (Sticker) ***********/
@@ -82,55 +88,83 @@ public class emotionDetect extends AppCompatActivity {
     int myPhotoWidth;
     float myPhotoHeightScale=1;//比例尺
     float myPhotoWidthScale=1;//比例尺
+    /***********初始化boolean*********/
+    boolean textImageNeedInit =true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
 
-        /***********圖片及message**********/
+        /*********** 圖片及message **********/
+
         Bundle bundle = this.getIntent().getExtras();
         dataPath = bundle.getString("dataPath");
         message = bundle.getString("message");
 
         /*********按鈕***********/
-        textImage=(ImageView) findViewById(R.id.TextImage);
-        setSticker= (ImageButton) findViewById(R.id.setSticker);
-        savePhoto = (ImageButton)findViewById(R.id.saveBtn);
 
-        /**********image and view**********/
+        setStickerBtn = (ImageButton) findViewById(R.id.setSticker);
+        savePhotoBtn = (ImageButton)findViewById(R.id.saveBtn);
+        setTextStingBtn=(ImageButton)findViewById(R.id.textStringBtn);
+        removeBackBtn=(ImageButton)findViewById(R.id.removeBackBtn);
+        checkBtn=(ImageButton)findViewById(R.id.checkBtn);
+        cancelBtn =(ImageButton)findViewById(R.id.cancelBtn);
+
+        /********** Image And View**********/
 
         mContext=this;
         myPhoto = findViewById(R.id.myPhoto);
         groupView=findViewById(R.id.groupView);
-        /**********initial**********/
+        textImage=(ImageView) findViewById(R.id.TextImage);
+
+        /**********初始化**********/
 
         myPhoto.setImageBitmap(getBitmap(dataPath));
-        textImage.setVisibility(View.GONE);
-
-
-
+        resultBitmap=((BitmapDrawable)myPhoto.getDrawable()).getBitmap();
+        VisibleController(true);
 
         Toast.makeText(emotionDetect.this, dataPath +"----------"+message, Toast.LENGTH_SHORT).show();
 
         /**********繪圖按鈕**********/
 
-        savePhoto.setOnClickListener(new View.OnClickListener() {
+        checkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 /**********計算textImage 與 螢幕比例 如果跑版把 這行註解 並且 把myPhoto 的ScaleType 設為 matrix**********/
 
                 setScreenScale();// 如果跑版註解這行
 
                 /*************合圖實作**********/
-
                 Bitmap bigImage = ((BitmapDrawable)myPhoto.getDrawable()).getBitmap();
-                Bitmap smallImage =getResizedBitmap(((BitmapDrawable)frontPic).getBitmap(),textImageWidth,textImageHeight);
+                Bitmap smallImage =getResizedBitmap(((BitmapDrawable)textImage.getDrawable()).getBitmap(),textImageWidth,textImageHeight);
                 Bitmap mergedImages = createSingleImageFromMultipleImages(bigImage, smallImage);
                 myPhoto.setImageBitmap(mergedImages);
+                resultBitmap=mergedImages;
+                Log.i("監聽器:textImage (X,Y)", "width: " + textImage.getX());
+                Log.i("監聽器:textImage (X,Y)", "height: "+ textImage.getY());
+                /*按鈕設置*/
+                VisibleController(true);
 
-                saveFile(mergedImages);//存檔
+            }
+        });
+
+        /**********取消按鈕*********/
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VisibleController(true);
+            }
+        });
+
+        /*********t儲存按鈕**********/
+
+        savePhotoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                saveFile(resultBitmap);/*********存檔**********/
 
                 Toast.makeText(emotionDetect.this,"saved", Toast.LENGTH_LONG).show();
 
@@ -142,26 +176,17 @@ public class emotionDetect extends AppCompatActivity {
             }
         });
 
-
         /***********貼圖按鈕**********/
 
-        setSticker.setOnClickListener(new View.OnClickListener() {
+        setStickerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                VisibleController(false);
                 textImage.setVisibility(View.VISIBLE);
+                setSticker();/**********根據表情設定貼圖**********/
 
-                /**********根據表情設定貼圖**********/
-
-                setSticker();
-
-                /**********初始化長寬**********/
-
-                initTextImageViewSize();
-
-                /************縮放套件 啟動**********/
-
-                bind = GestureViewBinder.bind(mContext, groupView, textImage);
-                bind.setFullGroup(false);
+                initTextImageViewSize(); /**********初始化長寬**********/
 
                 /**********縮放監聽器************/
 
@@ -182,20 +207,28 @@ public class emotionDetect extends AppCompatActivity {
                             }
                         });
 
-                     /*   Log.i("動態比例", scale + "");
-                        Log.i("動態比例", textImageHeight*scale + "");
-                        Log.i("動態比例", textImageWidth*scale + "");*/
-
                     }
                 });
-
-              /*  Log.i("myPhotoScale(X,Y)", myPhotoHeight+ "");
-                Log.i("myPhotoScale(X,Y)", myPhotoWidth+ "");
-                Log.i("初始TextImage 長寬", textImageHeight + "");
-                Log.i("初始TextImage 長寬", textImageWidth + "");*/
-
             }
         });
+
+        /*******文字編輯按鈕********/
+        setTextStingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VisibleController(false);
+                //textSting 編輯器
+            }
+        });
+
+        /**********去背功能按鈕*********/
+        removeBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VisibleController(false);
+            }
+        });
+
     }
 
     /**********合圖**********/
@@ -227,7 +260,6 @@ public class emotionDetect extends AppCompatActivity {
 
     /**********調整Bitmap大小***********/
 
-
     public Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight) {
 
         int width = bm.getWidth();
@@ -247,10 +279,9 @@ public class emotionDetect extends AppCompatActivity {
         /***********產生新BITMAP**********/
         Bitmap resizedBitmap = Bitmap.createBitmap(bm,0,0,width, height ,matrix, false);
 
-       // bm.recycle(); /*********清除Sticker*********/
-
-        Log.i("Resized", resizedBitmap.getHeight() + "");
+        //bm.recycle(); /*********清除Sticker*********/
         Log.i("Resized", resizedBitmap.getWidth() + "");
+        Log.i("Resized", resizedBitmap.getHeight() + "");
 
         return resizedBitmap;
     }
@@ -261,41 +292,31 @@ public class emotionDetect extends AppCompatActivity {
         switch (message){
             case "disgust" :
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.disgust));
-                frontPic = getResources().getDrawable(R.drawable.disgust);
                 break;
             case "angry" :
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.angry));
-                frontPic = getResources().getDrawable(R.drawable.angry);
                 break;
-
             case "happy" :
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.happy));
-                frontPic = getResources().getDrawable(R.drawable.happy);
                 break;
             case "neutral" :
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.netrl));
-                frontPic = getResources().getDrawable(R.drawable.netrl);
                 break;
             case "sad" :
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.sad));
-                frontPic = getResources().getDrawable(R.drawable.sad);
                 break;
             case "scared" :
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.scared));
-                frontPic = getResources().getDrawable(R.drawable.scared);
                 break;
             case "surprised" :
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.surprise));
-                frontPic = getResources().getDrawable(R.drawable.surprise);
                 break;
             case  "Failed Uploaded!":
                 Toast.makeText(emotionDetect.this,"Failed Uploaded!", Toast.LENGTH_LONG).show();
-                frontPic = getResources().getDrawable(R.drawable.surprise);
                 break;
             case "NoFace":
                 Toast.makeText(emotionDetect.this,"NO FACE", Toast.LENGTH_LONG).show();
                 textImage.setImageDrawable(getResources().getDrawable(R.drawable.angry));
-                frontPic = getResources().getDrawable(R.drawable.angry);
                 break;
         }
     }
@@ -351,19 +372,26 @@ public class emotionDetect extends AppCompatActivity {
 
     /*********初始化貼圖長寬**********/
 
-    public void initTextImageViewSize() {
-        ViewTreeObserver vto = textImage.getViewTreeObserver();
-        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                textImage.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                textImageWidth=textImage.getWidth();
+    private void initTextImageViewSize() {
+        if(textImageNeedInit) {
+            ViewTreeObserver vto = textImage.getViewTreeObserver();
+            vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    textImage.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    textImageWidth = textImage.getWidth();
+                    textImageHeight = textImage.getHeight();
+                    Log.i("監聽器:初始 textImage Size", "width: " + textImageWidth);
+                    Log.i("監聽器:初始 textImage Size", "height: " + textImageHeight);
+                }
+            });
 
-                textImageHeight=textImage.getHeight();
-                Log.i("監聽器:初始 textImage Size", "width: " + textImageWidth);
-                Log.i("監聽器:初始 textImage Size", "height: " + textImageHeight);
-            }
-        });
+            /************縮放套件 啟動**********/
+
+            bind =GestureViewBinder.bind(mContext, groupView, textImage);
+            bind.setFullGroup(false);
+            textImageNeedInit=false;//關閉初始化
+        }
     }
 
     /*********獲取bitmap form file**********/
@@ -377,5 +405,30 @@ public class emotionDetect extends AppCompatActivity {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /*********按鈕&View 之 Visible設置器 *********/
+
+    public void VisibleController(boolean checked){
+        if (checked){
+
+            textImage.setVisibility(View.GONE);
+
+            checkBtn.setVisibility(View.GONE);
+            cancelBtn.setVisibility(View.GONE);
+            setStickerBtn.setVisibility(View.VISIBLE);
+            setTextStingBtn.setVisibility(View.VISIBLE);
+            savePhotoBtn.setVisibility(View.VISIBLE);
+            removeBackBtn.setVisibility(View.VISIBLE);
+        }else{
+
+            checkBtn.setVisibility(View.VISIBLE);
+            cancelBtn.setVisibility(View.VISIBLE);
+            setStickerBtn.setVisibility(View.GONE);
+            setTextStingBtn.setVisibility(View.GONE);
+            savePhotoBtn.setVisibility(View.GONE);
+            removeBackBtn.setVisibility(View.GONE);
+        }
+
     }
 }

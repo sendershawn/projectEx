@@ -74,7 +74,7 @@ public class emotionDetect extends AppCompatActivity {
 
     Bitmap resultBitmap;
 
-    GestureViewBinder bind;
+    GestureViewBinder imageBind;
 
     /*********位置及大小參數**********/
     /*********** textImageView (Sticker) ***********/
@@ -88,6 +88,9 @@ public class emotionDetect extends AppCompatActivity {
     int myPhotoWidth;
     float myPhotoHeightScale=1;//比例尺
     float myPhotoWidthScale=1;//比例尺
+    /*************浮水印*************/
+    boolean watermarkclick=false;
+    String text="";
     /***********初始化boolean*********/
     boolean textImageNeedInit =true;
 
@@ -190,7 +193,7 @@ public class emotionDetect extends AppCompatActivity {
 
                 /**********縮放監聽器************/
 
-                bind.setOnScaleListener(new GestureViewBinder.OnScaleListener() {
+                imageBind.setOnScaleListener(new GestureViewBinder.OnScaleListener() {
                     @Override
                     public void onScale(float scale) {
 
@@ -217,7 +220,6 @@ public class emotionDetect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 VisibleController(false);
-                //textSting 編輯器
             }
         });
 
@@ -342,10 +344,10 @@ public class emotionDetect extends AppCompatActivity {
         File file = new File((path));
 
         try {
-            FileOutputStream out = new FileOutputStream(file);
-            combineImages.compress(Bitmap.CompressFormat.JPEG,90,out);
-            out.flush();
-            out.close();
+            FileOutputStream output = new FileOutputStream(file);
+            combineImages.compress(Bitmap.CompressFormat.JPEG,90,output);
+            output.flush();
+            output.close();
             Uri uri = Uri.fromFile(file);
             sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri));
         } catch (FileNotFoundException e) {
@@ -388,8 +390,8 @@ public class emotionDetect extends AppCompatActivity {
 
             /************縮放套件 啟動**********/
 
-            bind =GestureViewBinder.bind(mContext, groupView, textImage);
-            bind.setFullGroup(false);
+            imageBind =GestureViewBinder.bind(mContext, groupView, textImage);
+            imageBind.setFullGroup(false);
             textImageNeedInit=false;//關閉初始化
         }
     }
@@ -411,9 +413,7 @@ public class emotionDetect extends AppCompatActivity {
 
     public void VisibleController(boolean checked){
         if (checked){
-
             textImage.setVisibility(View.GONE);
-
             checkBtn.setVisibility(View.GONE);
             cancelBtn.setVisibility(View.GONE);
             setStickerBtn.setVisibility(View.VISIBLE);
@@ -421,7 +421,6 @@ public class emotionDetect extends AppCompatActivity {
             savePhotoBtn.setVisibility(View.VISIBLE);
             removeBackBtn.setVisibility(View.VISIBLE);
         }else{
-
             checkBtn.setVisibility(View.VISIBLE);
             cancelBtn.setVisibility(View.VISIBLE);
             setStickerBtn.setVisibility(View.GONE);

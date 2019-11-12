@@ -81,7 +81,7 @@ public class emotionDetect extends AppCompatActivity {
 
     Bitmap resultBitmap;
 
-    GestureViewBinder imageBind;//case1
+    GestureViewBinder textImageBinder;//case1
 
 
     /*********位置及大小參數**********/
@@ -224,7 +224,7 @@ public class emotionDetect extends AppCompatActivity {
 
                 /**********縮放監聽器************/
 
-                imageBind.setOnScaleListener(new GestureViewBinder.OnScaleListener() {
+                textImageBinder.setOnScaleListener(new GestureViewBinder.OnScaleListener() {
                     @Override
                     public void onScale(float scale) {
 
@@ -317,7 +317,7 @@ public class emotionDetect extends AppCompatActivity {
                 stringImageWidth =arr[i].length();
             }
         }
-        stringImageHeight *=ps+10;
+        stringImageHeight *=ps;
         stringImageWidth *=ps;
 
 
@@ -326,26 +326,17 @@ public class emotionDetect extends AppCompatActivity {
 
         for (int i =0;i<arr.length;i++) {
             Log.d("test", arr[i]);
-            canvas.drawText(arr[i], 0, ps+i*ps, paint);
+            canvas.drawText(arr[i], 0, ps+ps*i, paint);
         }
 
 
         stringImage.setImageBitmap(textBitmap);//將文字畫上去bitmap
-        GestureViewBinder textBind =GestureViewBinder.bind(mContext, groupView, stringImage);
-        textBind.setFullGroup(false);
-        textBind.setOnScaleListener(new GestureViewBinder.OnScaleListener() {
+        GestureViewBinder stingImageBinder =GestureViewBinder.bind(mContext, groupView, stringImage);
+        stingImageBinder.setFullGroup(false);
+        stingImageBinder.setOnScaleListener(new GestureViewBinder.OnScaleListener() {
             @Override
             public void onScale(float scale) {
                 stringImageScale=scale;
-                stringImage.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        stringImageHeight=stringImage.getHeight();
-                        stringImageWidth=stringImage.getWidth();
-
-                    }
-                });
-
             }
         });
 
@@ -507,8 +498,8 @@ public class emotionDetect extends AppCompatActivity {
             });
             /************縮放套件 啟動**********/
 
-            imageBind =GestureViewBinder.bind(mContext, groupView, textImage);
-            imageBind.setFullGroup(false);
+            textImageBinder =GestureViewBinder.bind(mContext, groupView, textImage);
+            textImageBinder.setFullGroup(false);
             textImageNeedInit=false;//關閉初始化
         }
     }

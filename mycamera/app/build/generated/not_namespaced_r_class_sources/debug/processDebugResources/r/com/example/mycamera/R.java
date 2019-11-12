@@ -3590,6 +3590,8 @@ public final class R {
     public static final int withText=0x7f0700a4;
     public static final int wrap=0x7f0700a5;
     public static final int wrap_content=0x7f0700a6;
+    public static final int zoomViewImage=0x7f0700a7;
+    public static final int zoomViewText=0x7f0700a8;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f080000;

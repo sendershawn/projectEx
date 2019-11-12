@@ -675,6 +675,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id StringView
 id TextImage
 id action_bar
 id action_bar_activity_content
@@ -749,6 +750,7 @@ id icon_group
 id ifRoom
 id image
 id info
+id inputtext
 id invisible
 id italic
 id left
@@ -880,6 +882,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout textstringview
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

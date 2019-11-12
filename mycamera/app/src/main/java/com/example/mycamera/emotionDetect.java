@@ -1,11 +1,16 @@
 package com.example.mycamera;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Environment;
@@ -13,8 +18,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -68,15 +75,17 @@ public class emotionDetect extends AppCompatActivity {
     ImageButton removeBackBtn;
     ImageButton checkBtn;
     ImageButton cancelBtn;
-
+    ImageView stringImage;
 
     FrameLayout groupView;
 
     Bitmap resultBitmap;
 
-    GestureViewBinder imageBind;
+    GestureViewBinder imageBind;//case1
+
 
     /*********位置及大小參數**********/
+    int checkEvent=0;
     /*********** textImageView (Sticker) ***********/
     int positionX;
     int positionY;
@@ -89,8 +98,10 @@ public class emotionDetect extends AppCompatActivity {
     float myPhotoHeightScale=1;//比例尺
     float myPhotoWidthScale=1;//比例尺
     /*************浮水印*************/
-    boolean watermarkclick=false;
-    String text="";
+    EditText inputText;
+    int stringImageHeight =0;
+    int stringImageWidth =0;
+    float stringImageScale=1;
     /***********初始化boolean*********/
     boolean textImageNeedInit =true;
 
@@ -116,11 +127,12 @@ public class emotionDetect extends AppCompatActivity {
 
         /********** Image And View**********/
 
+
         mContext=this;
         myPhoto = findViewById(R.id.myPhoto);
         groupView=findViewById(R.id.groupView);
         textImage=(ImageView) findViewById(R.id.TextImage);
-
+        stringImage = (ImageView)findViewById(R.id.StringView);
         /**********初始化**********/
 
         myPhoto.setImageBitmap(getBitmap(dataPath));
@@ -138,12 +150,29 @@ public class emotionDetect extends AppCompatActivity {
 
                 setScreenScale();// 如果跑版註解這行
 
-                /*************合圖實作**********/
                 Bitmap bigImage = ((BitmapDrawable)myPhoto.getDrawable()).getBitmap();
-                Bitmap smallImage =getResizedBitmap(((BitmapDrawable)textImage.getDrawable()).getBitmap(),textImageWidth,textImageHeight);
-                Bitmap mergedImages = createSingleImageFromMultipleImages(bigImage, smallImage);
+                Bitmap mergedImages;
+                Bitmap smallImage;
+                switch (checkEvent){
+                    case 0:
+                        smallImage =getResizedBitmap(((BitmapDrawable)textImage.getDrawable()).getBitmap(),textImageWidth,textImageHeight,textImageScale);
+                        mergedImages = createSingleImageFromMultipleImages(bigImage, smallImage,textImage);
+                        break;
+                    case 1:
+                        smallImage =getResizedBitmap(((BitmapDrawable) stringImage.getDrawable()).getBitmap(), stringImageWidth, stringImageHeight,stringImageScale);
+                        mergedImages = createSingleImageFromMultipleImages(bigImage, smallImage,stringImage);
+                        break;
+                    /*case 2:
+                        break;*/
+                    default:mergedImages=null;
+                }
                 myPhoto.setImageBitmap(mergedImages);
                 resultBitmap=mergedImages;
+                /*************合圖實作**********/
+
+
+
+
                 Log.i("監聽器:textImage (X,Y)", "width: " + textImage.getX());
                 Log.i("監聽器:textImage (X,Y)", "height: "+ textImage.getY());
                 /*按鈕設置*/
@@ -184,12 +213,14 @@ public class emotionDetect extends AppCompatActivity {
         setStickerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                checkEvent=0;
                 VisibleController(false);
                 textImage.setVisibility(View.VISIBLE);
                 setSticker();/**********根據表情設定貼圖**********/
 
                 initTextImageViewSize(); /**********初始化長寬**********/
+
+
 
                 /**********縮放監聽器************/
 
@@ -219,23 +250,110 @@ public class emotionDetect extends AppCompatActivity {
         setTextStingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                VisibleController(false);
+                checkEvent=1;
+                stringImage.setVisibility(View.VISIBLE);
+                //VisibleController(false);
+                /***********宣告dialog************/
+                AlertDialog.Builder builder = new AlertDialog.Builder(emotionDetect.this);
+                LayoutInflater inflater = LayoutInflater.from(emotionDetect.this);
+                View alert_view = inflater.inflate(R.layout.textstringview,null);//alert為另外做給alert用的layout
+                builder.setView(alert_view);
+                builder.setCancelable(true);
+                /***********抓取TEXT裡輸入的東西*********/
+                inputText = (EditText)alert_view.findViewById(R.id.inputtext);
+                /*******生成YES.NO按鈕以及點下去相對應發生的事******/
+                final AlertDialog dialog = builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                               WaterMaker();
+                               VisibleController(false);
+                            }
+                        }).setNegativeButton("NO",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        VisibleController(true);
+                    }
+                }).create();
+                dialog.show();//把dialog秀出來
             }
         });
+
+
+
 
         /**********去背功能按鈕*********/
         removeBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 VisibleController(false);
+                checkEvent=2;
             }
         });
 
     }
+    /**********文字浮水印*********/
+    private  void WaterMaker(){
+        Paint paint = new Paint();
+        String text= inputText.getText().toString().trim();//讀取EDDITTEXT內容
+        Log.d("test",text);
+        String[] arr = text.split("\n");
+        for (int i =0;i<arr.length;i++) {
+            Log.d("test", arr[i]);
+        }
+        float dips = 50.0f;//設定字體 不然不同解析度的字體大小差異極大
+        final float scale = getResources().getDisplayMetrics().density;//獲取螢幕解析度(dpi)
+        int ps = (int) (dips * scale + 0.5f);
+        String type = "宋體";
+        Typeface typeface =Typeface.create(type,Typeface.BOLD);
+        paint.setColor(Color.RED);
+        paint.setTextSize(ps);//設定字體大小
+        paint.setTypeface(typeface);//設定字形
+        stringImageHeight =arr.length;
+        stringImageWidth =0;
+
+        /***選出最大寬度以及最大長度***/
+        for (int i = 0;i<arr.length;i++){
+            if (arr[i].length()> stringImageWidth){
+                stringImageWidth =arr[i].length();
+            }
+        }
+        stringImageHeight *=ps+10;
+        stringImageWidth *=ps;
+
+
+        Bitmap textBitmap = Bitmap.createBitmap(stringImageWidth, stringImageHeight,Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(textBitmap);
+
+        for (int i =0;i<arr.length;i++) {
+            Log.d("test", arr[i]);
+            canvas.drawText(arr[i], 0, ps+i*ps, paint);
+        }
+
+
+        stringImage.setImageBitmap(textBitmap);//將文字畫上去bitmap
+        GestureViewBinder textBind =GestureViewBinder.bind(mContext, groupView, stringImage);
+        textBind.setFullGroup(false);
+        textBind.setOnScaleListener(new GestureViewBinder.OnScaleListener() {
+            @Override
+            public void onScale(float scale) {
+                stringImageScale=scale;
+                stringImage.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        stringImageHeight=stringImage.getHeight();
+                        stringImageWidth=stringImage.getWidth();
+
+                    }
+                });
+
+            }
+        });
+
+
+    }
 
     /**********合圖**********/
-
-    private Bitmap createSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage){
+    private Bitmap createSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage, ImageView smallImage){
 
         Bitmap result = Bitmap.createBitmap(firstImage.getWidth(), firstImage.getHeight(), firstImage.getConfig());
         Canvas canvas = new Canvas(result);
@@ -243,13 +361,13 @@ public class emotionDetect extends AppCompatActivity {
         /**********設定 textImage (Sticker)  XY*********/
 
         int[] locations = new int[2];
-        textImage.getLocationOnScreen(locations);
+        smallImage.getLocationOnScreen(locations);
         positionX = locations[0];
         positionY= locations[1];
         Log.i("TAG(X,Y)", positionX + "");
-        Log.i("TAG(X,Y)", positionY + "");;
+        Log.i("TAG(X,Y)", positionY + "");
         Matrix matrix = new Matrix();
-        matrix.postRotate(textImage.getRotation());
+        matrix.postRotate(smallImage.getRotation());
         matrix.postTranslate(positionX*myPhotoHeightScale,positionY*myPhotoHeightScale);//根據螢幕比設定
 
         /*********繪圖**********/
@@ -262,13 +380,13 @@ public class emotionDetect extends AppCompatActivity {
 
     /**********調整Bitmap大小***********/
 
-    public Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight) {
+    public Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight,float scale) {
 
         int width = bm.getWidth();
         int height = bm.getHeight();
 
-        float scaleWidth = ((float) newWidth*textImageScale)/width *myPhotoHeightScale;//根據螢幕比設定
-        float scaleHeight = ((float) newHeight*textImageScale) /height*myPhotoHeightScale;//根據螢幕比設定
+        float scaleWidth = ((float) newWidth*scale)/width *myPhotoHeightScale;//根據螢幕比設定
+        float scaleHeight = ((float) newHeight*scale) /height*myPhotoHeightScale;//根據螢幕比設定
 
         /*********矩陣for resize**********/
 
@@ -387,7 +505,6 @@ public class emotionDetect extends AppCompatActivity {
                     Log.i("監聽器:初始 textImage Size", "height: " + textImageHeight);
                 }
             });
-
             /************縮放套件 啟動**********/
 
             imageBind =GestureViewBinder.bind(mContext, groupView, textImage);
@@ -413,6 +530,7 @@ public class emotionDetect extends AppCompatActivity {
 
     public void VisibleController(boolean checked){
         if (checked){
+            stringImage.setVisibility(View.GONE);
             textImage.setVisibility(View.GONE);
             checkBtn.setVisibility(View.GONE);
             cancelBtn.setVisibility(View.GONE);

@@ -63,8 +63,8 @@ public class UploadAsycTask extends AsyncTask<String, String, String> {
         try {
 
             FileInputStream fileInputStream = new FileInputStream(sourceFIle);
-            //url = new URL("http://hianiku.ddns.net:8001/upload_img/");
-            url = new URL("http://192.168.43.230:8000/upload_img/");
+            url = new URL("http://hianiku.ddns.net:8001/upload_img/");
+            //url = new URL("http://192.168.43.230:8000/upload_img/");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setConnectTimeout(10000);

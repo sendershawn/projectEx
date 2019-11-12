@@ -22,22 +22,33 @@
                     android:scaleType="centerInside"
                     android:layout_gravity="center"
                     tools:ignore="ContentDescription" />
-            <ImageView
-                android:id="@+id/TextImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                tools:ignore="ContentDescription" />
-
-            <ImageView
-                android:id="@+id/StringView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/colorPrimaryDark"
-                android:adjustViewBounds="true"/>
+                <com.example.mycamera.ZoomView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/zoomViewImage">
+                    <ImageView
+                        android:id="@+id/TextImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:background="@color/mygray"
+                        tools:ignore="ContentDescription" />
+                </com.example.mycamera.ZoomView>
+                <com.example.mycamera.ZoomView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/zoomViewText">
+                    <ImageView
+                        android:id="@+id/StringView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/colorPrimaryDark"
+                        android:adjustViewBounds="true"
+                        tools:ignore="ContentDescription"/>
+                </com.example.mycamera.ZoomView>
         </FrameLayout>
 
 

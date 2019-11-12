@@ -836,6 +836,8 @@ id useLogo
 id withText
 id wrap
 id wrap_content
+id zoomViewImage
+id zoomViewText
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer cancel_button_image_alpha

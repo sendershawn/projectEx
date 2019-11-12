@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\projectEx-master\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+            "outputFile": "D:\\Desktop\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\vence\\.gradle\\caches\\transforms-2\\files-2.1\\d5dfb8f2082ddc5b494535b23907efd8\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -87,7 +87,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="HAAZCY02R781HNE" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -100,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/CameraActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="209" column="14" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="14" />
+            <state relative-caret-position="1748">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,20 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/RemoveBackgroundAsyncTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="55" column="48" lean-forward="true" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="19">
+              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,20 +121,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/emotionDetect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2164">
-              <caret line="159" column="31" selection-start-line="159" selection-start-column="31" selection-end-line="159" selection-end-column="31" />
+            <state relative-caret-position="211">
+              <caret line="144" column="18" selection-start-line="144" selection-start-column="18" selection-end-line="144" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4337#6153#0" expanded="true" />
-                <element signature="e#6152#6153#0" expanded="true" />
-                <element signature="e#7284#7534#0" expanded="true" />
-                <element signature="e#7533#7534#0" expanded="true" />
-                <element signature="e#8509#8826#0" expanded="true" />
-                <element signature="e#8825#8826#0" expanded="true" />
-                <element signature="e#8851#9083#0" expanded="true" />
-                <element signature="e#9082#9083#0" expanded="true" />
+                <element signature="e#17438#17439#0" expanded="true" />
                 <element signature="e#17484#17485#0" expanded="true" />
               </folding>
             </state>
@@ -157,16 +147,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/ZoomView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="703">
               <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#587#588#0" expanded="true" />
-                <element signature="e#622#623#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
-                <element signature="e#721#722#0" expanded="true" />
-                <element signature="e#1106#1107#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,7 +183,6 @@
       <find>imageBinder</find>
       <find>int textImageWidth;</find>
       <find>smallImage</find>
-      <find>createSingleImageFromMultipleImages</find>
       <find>getResizedBitmap</find>
       <find>rotation</find>
       <find>zoomViewText=(ZoomView)findViewById(R.id.zoomViewText);</find>
@@ -215,6 +198,7 @@
       <find>processFinish</find>
       <find>Finish</find>
       <find>dataPath</find>
+      <find>setScreenScale</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -259,15 +243,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/textstringview.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/GestureViewBinder/ScaleGestureListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/ZoomView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/removeResponse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/RemoveBackgroundAsyncTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mycamera/emotionDetect.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="240" />
     <option name="y" value="128" />
     <option name="width" value="1440" />
@@ -279,9 +263,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -300,10 +283,17 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="mycamera" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mycamera" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="mycamera" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,7 +301,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-11-07T16:21:05.441Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="HAAZCY02R781HNE" />
+    <property name="device.picker.selection" value="CQ300068RY" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -324,9 +314,6 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\projectEx-master\mycamera\app\src\main\java\com\example\mycamera" />
-    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.mycamera.GestureViewBinder" />
     </key>
@@ -340,6 +327,9 @@
       <recent name="D:\Desktop\mycamera\app\src\main\res\layout" />
       <recent name="D:\Desktop\mycamera\app\src\main\java\com\example\mycamera" />
       <recent name="D:\Desktop\mycamera\app\src\main\res\drawable" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projectEx-master\mycamera\app\src\main\java\com\example\mycamera" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -439,10 +429,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="240" y="128" width="1440" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.288874" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.38115942" />
       <window_info id="Captures" order="1" sideWeight="0.5010526" side_tool="true" weight="0.25938338" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -451,15 +441,15 @@
       <window_info id="Resources Explorer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.5831099" visible="true" weight="0.3101983" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.56769437" weight="0.41076487" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.5817575" weight="0.032224532" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.56666666" visible="true" weight="0.6181534" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49798927" weight="0.32719547" />
       <window_info anchor="bottom" id="Android Profiler" order="3" sideWeight="0.49798927" weight="0.3281471" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.8856417" weight="0.3290461" />
       <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49936467" weight="0.32725322" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.41689008" side_tool="true" visible="true" weight="0.3101983" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.43333334" side_tool="true" visible="true" weight="0.6181534" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
-      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.61863273" weight="0.2592068" />
+      <window_info anchor="bottom" id="Build" order="8" sideWeight="0.5967742" weight="0.25779626" />
       <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49678662" weight="0.32618025" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -516,12 +506,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/getPathFromUri.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_camera_acitivity.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
           <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -530,7 +520,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Github/projectEx/mycamera/app/build.gradle">
+    <entry file="file://D:/github/projectEx/mycamera/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="65" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
@@ -582,12 +572,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/GestureViewBinder/OnTouchRoataionBinder.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/GestureViewBinder/RotationView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/Page2.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/GestureImageView.java" />
@@ -604,12 +594,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -633,12 +623,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/textstringview.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="46" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="46" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/GestureViewBinder/ScrollGestureBinder.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -679,14 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/AsyncResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -701,30 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/CameraActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="209" column="14" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/os/Looper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="168" selection-start-line="168" selection-end-line="168" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,38 +700,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/CameraActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/ZoomView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="703">
           <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/UploadAsycTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mycamera/emotionDetect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2164">
-          <caret line="159" column="31" selection-start-line="159" selection-start-column="31" selection-end-line="159" selection-end-column="31" />
+        <state relative-caret-position="211">
+          <caret line="144" column="18" selection-start-line="144" selection-start-column="18" selection-end-line="144" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4337#6153#0" expanded="true" />
-            <element signature="e#6152#6153#0" expanded="true" />
-            <element signature="e#7284#7534#0" expanded="true" />
-            <element signature="e#7533#7534#0" expanded="true" />
-            <element signature="e#8509#8826#0" expanded="true" />
-            <element signature="e#8825#8826#0" expanded="true" />
-            <element signature="e#8851#9083#0" expanded="true" />
-            <element signature="e#9082#9083#0" expanded="true" />
+            <element signature="e#17438#17439#0" expanded="true" />
             <element signature="e#17484#17485#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_page2.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
         </state>
       </provider>
     </entry>

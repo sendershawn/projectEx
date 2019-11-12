@@ -142,7 +142,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             public void onClick(View v) {
                 /**********計算textImage 與 螢幕比例 如果跑版把 這行註解 並且 把myPhoto 的ScaleType 設為 matrix**********/
 
-                setScreenScale();// 如果跑版註解這行
+                //setScreenScale();// 如果跑版註解這行
 
                 Bitmap bigImage = ((BitmapDrawable)myPhoto.getDrawable()).getBitmap();
                 Bitmap mergedImages;

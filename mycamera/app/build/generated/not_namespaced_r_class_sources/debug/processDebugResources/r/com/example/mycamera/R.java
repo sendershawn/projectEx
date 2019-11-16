@@ -13865,4 +13865,7 @@ public final class R {
      */
     public static final int ViewStubCompat_android_inflatedId=2;
   }
+  public static final class xml {
+    public static final int provider_paths=0x7f0e0000;
+  }
 }

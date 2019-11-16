@@ -1496,6 +1496,10 @@
         "source": "C:\\Users\\vence\\.gradle\\caches\\transforms-2\\files-2.1\\d5dfb8f2082ddc5b494535b23907efd8\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "D:\\Desktop\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
+        "source": "D:\\Desktop\\mycamera\\app\\src\\main\\res\\xml\\provider_paths.xml"
+    },
+    {
         "merged": "D:\\Desktop\\mycamera\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "D:\\Desktop\\mycamera\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },

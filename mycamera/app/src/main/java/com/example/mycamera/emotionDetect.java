@@ -1,7 +1,7 @@
 package com.example.mycamera;
 
 import android.app.AlertDialog;
-import android.content.Context;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,13 +14,15 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Environment;
+
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewTreeObserver;
+
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -59,7 +61,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
 
     String dataPath;
     String message;
-
+    String path;
     /**********View類**********/
 
     ImageView myPhoto;
@@ -202,6 +204,8 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
                 Log.i("ScaleForScreen", myPhotoWidth + "");
                 Log.i("ScaleForScreen", myPhotoHeightScale + "");
                 Log.i("ScaleForScreen", myPhotoWidthScale + "");
+                shareImg(path);
+
 
             }
         });
@@ -426,19 +430,19 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
 
         /**********儲存位置***********/
 
-        String path = Environment.getExternalStorageDirectory() + "/Pictures2/" + UUID.randomUUID().toString() + ".JPEG";
+        path = Environment.getExternalStorageDirectory() + "/Pictures2/" + UUID.randomUUID().toString() + ".JPEG";
         File file = new File((path));
-
+        Uri uri = Uri.fromFile(file);
         try {
             FileOutputStream output = new FileOutputStream(file);
             combineImages.compress(Bitmap.CompressFormat.JPEG,90,output);
             output.flush();
             output.close();
-            Uri uri = Uri.fromFile(file);
             sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,uri));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 
@@ -490,6 +494,20 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             removeBackBtn.setVisibility(View.GONE);
         }
     }
+
+    private void shareImg(String imagepath) {
+        if (imagepath == null) {
+            return;
+        }
+        File file= new File(imagepath);
+        Uri uri = FileProvider.getUriForFile(this,getPackageName()+".provider",file);
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("image/*");
+        intent.putExtra(Intent.EXTRA_STREAM, uri);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivity(Intent.createChooser(intent,"分享至"));
+    }
+
 
     /*****去背連線*****/
     @Override

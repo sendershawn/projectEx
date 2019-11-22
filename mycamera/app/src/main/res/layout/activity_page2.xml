@@ -56,11 +56,12 @@
         </FrameLayout>
 
         <TextView
+            android:id="@+id/instructionView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="78dp"
-            android:text="請以白色畫筆塗選前景(必要)\n請以黑色畫筆塗選前景(非必要)\n預設為白色 左下角畫筆可切換顏色"
+            android:text="請以白色畫筆塗選前景(必要)\n請以黑色畫筆塗選後景(非必要)\n預設為白色 左下角畫筆可切換顏色"
             android:textColor="@color/white"
             android:textSize="20dp" />
 

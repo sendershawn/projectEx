@@ -753,6 +753,7 @@ id ifRoom
 id image
 id info
 id inputtext
+id instructionView
 id invisible
 id italic
 id left

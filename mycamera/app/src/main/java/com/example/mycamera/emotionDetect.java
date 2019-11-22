@@ -31,6 +31,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -69,6 +70,8 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
     String message;
     String resultPath;
     /**********View類**********/
+
+    TextView instructionView;
 
     ImageView myPhoto;
     ImageView textImage ;
@@ -139,6 +142,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         groupView=findViewById(R.id.groupView);
         textImage=(ImageView) findViewById(R.id.TextImage);
         stringImage = (ImageView)findViewById(R.id.StringView);
+        instructionView=findViewById(R.id.instructionView);
         zoomViewImage=(ZoomView)findViewById(R.id.zoomViewImage);
         zoomViewText=(ZoomView)findViewById(R.id.zoomViewText);
         paintBoard =(PaintBoard)findViewById(R.id.paint_board);
@@ -291,6 +295,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             @Override
             public void onClick(View v) {
                 VisibleController(false);
+                instructionView.setVisibility(View.VISIBLE);
                 paintBoard.setSize(myPhotoWidth,myPhotoHeight);
                 paintBoard.setVisibility(View.VISIBLE);
                 penColorBtn.setVisibility(View.VISIBLE);
@@ -512,6 +517,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
 
     public void VisibleController(boolean checked){
         if (checked){
+            instructionView.setVisibility(View.GONE);
             stringImage.setVisibility(View.GONE);
             textImage.setVisibility(View.GONE);
             paintBoard.setVisibility(View.GONE);
@@ -529,6 +535,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             setTextStingBtn.setVisibility(View.GONE);
             savePhotoBtn.setVisibility(View.GONE);
             removeBackBtn.setVisibility(View.GONE);
+
         }
     }
 

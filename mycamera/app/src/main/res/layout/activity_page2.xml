@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,10 +16,17 @@
                     android:id="@+id/myPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/mygray"
                     android:adjustViewBounds="true"
                     android:scaleType="centerInside"
                     android:layout_gravity="center"
                     tools:ignore="ContentDescription" />
+                <com.example.mycamera.PaintBoard
+                    android:id="@+id/paint_board"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_green_light"
+                    android:alpha="0.4"/>
                 <com.example.mycamera.ZoomView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,8 +52,17 @@
                         android:adjustViewBounds="true"
                         tools:ignore="ContentDescription"/>
                 </com.example.mycamera.ZoomView>
+
         </FrameLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="78dp"
+            android:text="請以白色畫筆塗選前景(必要)\n請以黑色畫筆塗選前景(非必要)\n預設為白色 左下角畫筆可切換顏色"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
 
 
@@ -56,10 +71,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|bottom"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="108dp"
             android:layout_marginBottom="8dp"
             android:background="@color/mygray"
             android:src="@drawable/ic_insert_emoticon" />
+        <ImageButton
+            android:id="@+id/setPenColorBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_pen" />
 
         <ImageButton
             android:id="@+id/checkBtn"
@@ -95,18 +119,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_text_fields"
-            android:layout_gravity="bottom|left"
+            android:layout_gravity="bottom|right"
             android:background="@color/mygray"
             android:layout_marginBottom="8dp"
-            android:layout_marginStart="108dp"/>
+            android:layout_marginEnd="108dp"/>
         <ImageButton
             android:id="@+id/removeBackBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_keyer"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="bottom|left"
             android:background="@color/mygray"
-            android:layout_marginEnd="108dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"/>
 
 

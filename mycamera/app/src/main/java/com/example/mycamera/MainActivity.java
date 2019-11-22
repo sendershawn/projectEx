@@ -2,6 +2,7 @@ package com.example.mycamera;
 
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -106,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                galleryIntent.setType("image/jpeg");
+                galleryIntent.setType("image/*");
+                galleryIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivityForResult(galleryIntent,10);
             }
         });
@@ -114,18 +117,28 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
         switch (requestCode){
 
             case 10 :
                 if (resultCode==RESULT_OK)
                 {
                     if(data!=null){
+
                         Uri uri =data.getData();
                         String path =getPathFromUri.getPathFromUri(this,uri);/*from class getPath form Uri*/
                         Log.i("gallery get uri","Uri="+uri.toString());
                         Log.i("gallery get path ","Path="+ path);
                         Toast.makeText(MainActivity.this, "real path " + path, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, ImageSettingForGallery.class);
+                        intent.putExtra("dataPath", path);
+                        if (Build.VERSION.SDK_INT < 19) {
+                            this.getWindow().getDecorView().setSystemUiVisibility(View.GONE);
+                        } else {
+                            View decorView = getWindow().getDecorView();
+                            int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+                            decorView.setSystemUiVisibility(uiOptions);
+                        }
+                        startActivity(intent);
                     }
                 }
                 break;

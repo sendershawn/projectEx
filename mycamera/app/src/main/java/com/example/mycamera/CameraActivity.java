@@ -2,6 +2,7 @@ package com.example.mycamera;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -296,8 +297,8 @@ public class CameraActivity extends AppCompatActivity implements AsyncResponse{
             int width = 1920;
             int height = 1440;
             if (jpegSizes != null && jpegSizes.length > 0) {
-                width = jpegSizes[0].getWidth() * 3 / 4;
-                height = jpegSizes[0].getHeight() * 3 / 4;
+             //   width = jpegSizes[0].getWidth() * 3 / 4;
+               // height = jpegSizes[0].getHeight() * 3 / 4;
             }
             final ImageReader reader = ImageReader.newInstance(width, height, ImageFormat.JPEG, 1);
             List<Surface> outputSurface = new ArrayList<>(2);

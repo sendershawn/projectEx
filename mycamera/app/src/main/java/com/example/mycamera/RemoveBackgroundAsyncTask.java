@@ -12,38 +12,42 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class RemoveBackgroundAsyncTask extends AsyncTask<String, String, Bitmap> {
 
     public emotionDetect delegate = null;
     private final String TAG = "ShelfAsyncTask";
-    private DataOutputStream dos = null;
-    private Context mContext;
     private String lineEnd = "\r\n";
     private String twoHyphens = "--";
     private String boundary = "*****";
-    private int bytesRead,bytesAvailable,bufferSize;
-    private byte[] buffer;
-    private int maxBufferSize = 1 * 1024 * 1024;
+    private DataOutputStream dos = null;
+    private Context mContext;
     private int serverResponseCode = 0;
     private String message;
-    private Bitmap bitmap = null;
+    private byte[] buffer;
+    private int bytesRead,bytesAvailable,bufferSize;
+    private int maxBufferSize = 1 * 1024 * 1024;
+    private Bitmap mbitmap = null;
     private String filepath;
     ProgressDialog dialog;
 
-    public void setBitmap(Bitmap bitmap){
-        this.bitmap = bitmap;
-    }
 
 
     public RemoveBackgroundAsyncTask(Context context, String path){
@@ -53,7 +57,7 @@ public class RemoveBackgroundAsyncTask extends AsyncTask<String, String, Bitmap>
     }
     @Override
     protected void onPreExecute() {
-        dialog=ProgressDialog.show(mContext,"","...",true);
+        dialog=ProgressDialog.show(mContext,"","去背中...",true);
         if(dialog.isShowing())
         {
             Log.d("progress dialog","載入中!");
@@ -71,16 +75,15 @@ public class RemoveBackgroundAsyncTask extends AsyncTask<String, String, Bitmap>
             //url = new URL("http://192.168.43.230:8000/upload_img/");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
-            conn.setConnectTimeout(20000);
-            conn.setReadTimeout(20000);
+            conn.setConnectTimeout(10000);
+            conn.setReadTimeout(120000);
             conn.setDoInput(true); //允許輸入流，即允許下載
             conn.setDoOutput(true); //允許輸出流，即允許上傳
-            conn.setUseCaches(false); //設置是否使用緩存
+            conn.setUseCaches(true); //設置是否使用緩存
             conn.setRequestProperty("Connection", "Keep-Alive");
             conn.setRequestProperty("ENCTYPE", "multipart/form-data");
             conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
             conn.connect();
-
             dos = new DataOutputStream(conn.getOutputStream());
             dos.writeBytes(twoHyphens + boundary + lineEnd);
             dos.writeBytes("Content-Disposition: form-data; name=\"attachment_file\";filename=\""
@@ -108,6 +111,7 @@ public class RemoveBackgroundAsyncTask extends AsyncTask<String, String, Bitmap>
 
             dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
+
             // Responses from the server (code and message)
             serverResponseCode = conn.getResponseCode();
             String serverResponseMessage = conn.getResponseMessage();
@@ -122,12 +126,15 @@ public class RemoveBackgroundAsyncTask extends AsyncTask<String, String, Bitmap>
                 BufferedReader in = new BufferedReader(reader);
                 message = in.readLine();
                 byte[] decodedString = Base64.decode(message, Base64.DEFAULT);
-                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                Bitmap myBitmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+              //  InputStream input = new ByteArrayInputStream(message.getBytes(StandardCharsets.UTF_8));
+              //  Bitmap myBitmap = BitmapFactory.decodeStream(input);
+                Log.d("FromServerBitmap","有東西");
                 Log.d("FromServer",message);
-                return  decodedByte ;
+                return  myBitmap ;
             }
 
-            fileInputStream.close();
+
             dos.flush();
             dos.close();
 

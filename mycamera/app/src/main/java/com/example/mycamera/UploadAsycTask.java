@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -21,7 +22,7 @@ import java.net.URL;
 import java.net.SocketTimeoutException;
 
 public class UploadAsycTask extends AsyncTask<String, String, String> {
-    public CameraActivity delegate = null;
+    public AsyncResponse delegate = null;
     private final String TAG = "ShelfAsyncTask";
     private DataOutputStream dos = null;
     private Context mContext;
@@ -46,10 +47,14 @@ public class UploadAsycTask extends AsyncTask<String, String, String> {
         super();
         mContext = context;
         filepath=path;
+        dialog=new ProgressDialog(mContext,android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+
     }
     @Override
     protected void onPreExecute() {
+
         dialog=ProgressDialog.show(mContext,"","Detecting...",true);
+
         if(dialog.isShowing())
         {
             Log.d("progress dialog","載入中!");

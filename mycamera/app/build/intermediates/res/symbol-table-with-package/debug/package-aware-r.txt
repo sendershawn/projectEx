@@ -431,6 +431,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -633,20 +634,21 @@ drawable angry
 drawable bg_ground
 drawable button_fliushlight
 drawable button_fliushlight_off
-drawable button_save
-drawable button_takephoto
 drawable button_upload
 drawable camera
 drawable disgust
 drawable happy
 drawable ic_check_circle
 drawable ic_close
+drawable ic_eraser50
 drawable ic_file_upload
 drawable ic_insert_emoticon
 drawable ic_keyer
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_pen
 drawable ic_photo_camera
+drawable ic_rotate_left_black_24dp
 drawable ic_save
 drawable ic_switch_camera
 drawable ic_text_fields
@@ -769,6 +771,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id packed
+id paint_board
 id parent
 id parentPanel
 id percent
@@ -795,6 +798,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id setPenColorBtn
 id setSticker
 id shortcut
 id showCustom
@@ -828,6 +832,7 @@ id title_template
 id top
 id topBar
 id topPanel
+id turnBtn
 id underBar
 id uniform
 id up
@@ -872,6 +877,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_camera_acitivity
+layout activity_image_setting_for_gallery
 layout activity_main
 layout activity_page2
 layout notification_action
@@ -1193,6 +1199,7 @@ style Theme_AppCompat_Light_Dialog_Alert
 style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
+style Theme_AppCompat_Light_NoActionBar_FullScreen
 style Theme_AppCompat_NoActionBar
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar

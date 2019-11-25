@@ -642,6 +642,9 @@ drawable ic_check_circle
 drawable ic_close
 drawable ic_eraser50
 drawable ic_file_upload
+drawable ic_format_bold_black_24dp
+drawable ic_format_italic_black_24dp
+drawable ic_format_shapes_black_24dp
 drawable ic_insert_emoticon
 drawable ic_keyer
 drawable ic_launcher_background
@@ -706,6 +709,7 @@ id async
 id barrier
 id beginning
 id blocking
+id bold
 id bottom
 id btnCapture
 id buttonPanel
@@ -801,6 +805,7 @@ id search_voice_btn
 id select_dialog_listview
 id setPenColorBtn
 id setSticker
+id shapes
 id shortcut
 id showCustom
 id showHome

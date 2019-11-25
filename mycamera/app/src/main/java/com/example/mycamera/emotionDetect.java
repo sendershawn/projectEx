@@ -110,6 +110,12 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
     EditText inputText;
     int stringImageHeight =0;
     int stringImageWidth =0;
+    ImageView bold;
+    ImageView italic;
+    ImageView shapes;
+    Boolean boldcCick=false;
+    Boolean italicClick=false;
+    Boolean shapesClick=false;
     /**********畫板**********/
     Bitmap maskForRemove=null;
     String maskPath;
@@ -165,7 +171,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             public void onClick(View v) {
                 /**********計算textImage 與 螢幕比例 如果跑版把 這行註解 並且 把myPhoto 的ScaleType 設為 matrix**********/
 
-                setScreenScale();// 如果跑版註解這行
+                //setScreenScale();// 如果跑版註解這行
 
                 Bitmap bigImage = ((BitmapDrawable)myPhoto.getDrawable()).getBitmap();
                 Bitmap mergedImages;
@@ -271,6 +277,9 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
                 /***********抓取TEXT裡輸入的東西*********/
 
                 inputText = (EditText)alert_view.findViewById(R.id.inputtext);
+                bold = (ImageView)alert_view.findViewById(R.id.bold);
+                italic = (ImageView)alert_view.findViewById(R.id.italic);
+                shapes = (ImageView)alert_view.findViewById(R.id.shapes);
 
                 /*******生成YES.NO按鈕以及點下去相對應發生的事******/
 
@@ -279,14 +288,58 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
                             public void onClick(DialogInterface arg0, int arg1) {
                                WaterMaker();
                                VisibleController(false);
+                               boldcCick=false;
+                               italicClick=false;
+                               shapesClick=false;
                             }
                         }).setNegativeButton("NO",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         VisibleController(true);
+                        boldcCick=false;
+                        italicClick=false;
+                        shapesClick=false;
                     }
                 }).create();
                 dialog.show();//把dialog秀出來
+
+                bold.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if (boldcCick==true){
+                            boldcCick=false;
+                            bold.setAlpha((float) 1);
+                        }else {boldcCick=true;bold.setAlpha((float) 0.2);}
+
+                        Log.d("test", "bold Click:"+String.valueOf(boldcCick));
+                    }
+                });
+                italic.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if (italicClick==true){
+                            italicClick=false;
+                            italic.setAlpha((float) 1);
+                        }else {italicClick=true;italic.setAlpha((float)0.2);}
+
+                        Log.d("test", "italic Click:"+String.valueOf(italicClick));
+                    }
+                });
+                shapes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if (shapesClick==true){
+                            shapesClick=false;
+                            shapes.setAlpha((float)1);
+                        }else {shapesClick=true;shapes.setAlpha((float) 0.2);}
+
+                        Log.d("test", " shapes click:"+String.valueOf(shapesClick));
+                    }
+                });
+
             }
         });
 
@@ -337,8 +390,23 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         int ps = Math.round(dips * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
         //int ps = (int) (dips * scale + 0.5f);
         String type = "宋體";
-        Typeface typeface =Typeface.create(type,Typeface.BOLD);
-        paint.setColor(Color.RED);
+
+        Typeface typeface =Typeface.create(type,Typeface.NORMAL);
+        if ((boldcCick==true)&&(italicClick==true)){
+            typeface =Typeface.create(type,Typeface.BOLD_ITALIC);
+            Log.d("test", "1");
+        }else if(italicClick==true){
+            typeface =Typeface.create(type,Typeface.ITALIC);
+            Log.d("test", "2");
+        }else if(boldcCick==true){
+            typeface =Typeface.create(type,Typeface.BOLD);
+            Log.d("test", "3");
+        }
+        else{typeface =Typeface.create(type,Typeface.NORMAL);}
+
+
+
+        paint.setColor(Color.BLACK);
         paint.setTextSize(ps);//設定字體大小
         paint.setTypeface(typeface);//設定字形
         stringImageHeight =arr.length;
@@ -353,9 +421,12 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         stringImageHeight *=ps+10;
         stringImageWidth *=ps;
 
-        Bitmap textBitmap = Bitmap.createBitmap(stringImageWidth, stringImageHeight,Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(textBitmap);
 
+        Bitmap textBitmap = Bitmap.createBitmap(stringImageWidth+20, stringImageHeight+20,Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(textBitmap);
+        if(shapesClick==true) {
+            canvas.drawColor(Color.WHITE);
+        }
         for (int i =0;i<arr.length;i++) {
             Log.d("test", arr[i]);
             canvas.drawText(arr[i], 0, ps+ps*i, paint);

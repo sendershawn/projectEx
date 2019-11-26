@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\123\\projectEx-master\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Github\\projectEx\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
-                {
-                    "source": "D:\\123\\projectEx-master\\mycamera\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "45",
-                        "endOffsets": "57"
-                    },
-                    "to": {
-                        "startLines": "379",
-                        "startColumns": "4",
-                        "startOffsets": "22614",
-                        "endColumns": "45",
-                        "endOffsets": "22655"
-                    }
-                },
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\values\\values.xml",
                     "from": {
@@ -56,23 +39,6 @@
                         "endLines": "15,1859,2566,2655",
                         "endColumns": "60,12,24,24",
                         "endOffsets": "720,122891,166828,172039"
-                    }
-                },
-                {
-                    "source": "D:\\123\\projectEx-master\\mycamera\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "4,2,3,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "153,55,102,199,240",
-                        "endColumns": "45,46,50,40,39",
-                        "endOffsets": "194,97,148,235,275"
-                    },
-                    "to": {
-                        "startLines": "153,154,155,178,201",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "7704,7750,7797,9201,10780",
-                        "endColumns": "45,46,50,40,39",
-                        "endOffsets": "7745,7792,7843,9237,10815"
                     }
                 },
                 {
@@ -114,7 +80,24 @@
                     }
                 },
                 {
-                    "source": "D:\\123\\projectEx-master\\mycamera\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\Github\\projectEx\\mycamera\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,2,3,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "153,55,102,199,240",
+                        "endColumns": "45,46,50,40,39",
+                        "endOffsets": "194,97,148,235,275"
+                    },
+                    "to": {
+                        "startLines": "153,154,155,178,201",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "7704,7750,7797,9201,10780",
+                        "endColumns": "45,46,50,40,39",
+                        "endOffsets": "7745,7792,7843,9237,10815"
+                    }
+                },
+                {
+                    "source": "D:\\Github\\projectEx\\mycamera\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,9",
                         "startColumns": "4,4",
@@ -130,6 +113,23 @@
                         "endLines": "392,1749",
                         "endColumns": "12,12",
                         "endOffsets": "23538,114208"
+                    }
+                },
+                {
+                    "source": "D:\\Github\\projectEx\\mycamera\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "45",
+                        "endOffsets": "57"
+                    },
+                    "to": {
+                        "startLines": "379",
+                        "startColumns": "4",
+                        "startOffsets": "22614",
+                        "endColumns": "45",
+                        "endOffsets": "22655"
                     }
                 }
             ]

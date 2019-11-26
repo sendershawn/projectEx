@@ -1,6 +1,5 @@
 package com.example.mycamera;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -14,7 +13,6 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
@@ -27,6 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -41,7 +40,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 
-public class emotionDetect extends AppCompatActivity implements removeResponse{
+public class emotionDetect extends AppCompatActivity implements removeResponse,removeAutoResponse{
 
     /**********全螢幕**********/
 
@@ -68,10 +67,17 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
 
     String dataPath;
     String message;
+    String [] percentSplit;
+    String allPercent="";
     String resultPath;
+    /**********Button**********/
+    Button semiRemoveBtn;
+    Button autoRemoveBtn;
     /**********View類**********/
 
     TextView instructionView;
+    TextView removeSelectInstructionView;
+    TextView areYouSure;
 
     ImageView myPhoto;
     ImageView textImage ;
@@ -93,7 +99,6 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
     ZoomView zoomViewImage;
     ZoomView zoomViewText;
     PaintBoard paintBoard;
-
     /*********位置及大小參數**********/
     int checkEvent=0;
     /*********** textImageView (Sticker) ***********/
@@ -113,6 +118,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
     ImageView bold;
     ImageView italic;
     ImageView shapes;
+    ImageView color;
     Boolean boldcCick=false;
     Boolean italicClick=false;
     Boolean shapesClick=false;
@@ -126,11 +132,26 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
 
-        /*********** 圖片及message **********/
+        /*********** 圖片、message、結果dialog **********/
 
         Bundle bundle = this.getIntent().getExtras();
         dataPath = bundle.getString("dataPath");
         message = bundle.getString("message");
+        percentSplit=message.split("-");
+        message=percentSplit[1];
+        for(int i = 2;i<=8;i++)
+        {
+            allPercent=allPercent+percentSplit[i]+"\n";
+        }
+        AlertDialog.Builder dialog = new AlertDialog.Builder(emotionDetect.this);
+        dialog.setTitle("辨識結果");
+        dialog.setMessage("表情為:"+message+"\n\n"+"詳情:\n"+allPercent+"點選確認進行圖片編輯");
+        dialog.setPositiveButton("確認",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+        dialog.show();
 
         /*********按鈕***********/
 
@@ -141,6 +162,8 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         penColorBtn=(ImageButton)findViewById(R.id.setPenColorBtn);
         checkBtn=(ImageButton)findViewById(R.id.checkBtn);
         cancelBtn =(ImageButton)findViewById(R.id.cancelBtn);
+        semiRemoveBtn=findViewById(R.id.semi_auto_remove_btn);
+        autoRemoveBtn=findViewById(R.id.auto_remove_btn);
 
         /********** Image And View**********/
 
@@ -149,6 +172,8 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         textImage=(ImageView) findViewById(R.id.TextImage);
         stringImage = (ImageView)findViewById(R.id.StringView);
         instructionView=findViewById(R.id.instructionView);
+        removeSelectInstructionView=findViewById(R.id.removeSelectInstructionView);
+        areYouSure=findViewById(R.id.areYouSure);
         zoomViewImage=(ZoomView)findViewById(R.id.zoomViewImage);
         zoomViewText=(ZoomView)findViewById(R.id.zoomViewText);
         paintBoard =(PaintBoard)findViewById(R.id.paint_board);
@@ -162,8 +187,6 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
 
         VisibleController(true);
 
-        Toast.makeText(emotionDetect.this, dataPath +"----------"+message, Toast.LENGTH_SHORT).show();
-
         /**********繪圖按鈕**********/
 
         checkBtn.setOnClickListener(new View.OnClickListener() {
@@ -171,7 +194,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             public void onClick(View v) {
                 /**********計算textImage 與 螢幕比例 如果跑版把 這行註解 並且 把myPhoto 的ScaleType 設為 matrix**********/
 
-                //setScreenScale();// 如果跑版註解這行
+                setScreenScale();// 如果跑版註解這行
 
                 Bitmap bigImage = ((BitmapDrawable)myPhoto.getDrawable()).getBitmap();
                 Bitmap mergedImages;
@@ -189,9 +212,10 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
                         maskForRemove=paintBoard.getBitmap();
                         mergedImages=null;
                         saveFile(maskForRemove);
-                        removeBackground();
-
+                        removeBackgroundSemi();
                         break;
+                    case 3:
+                        removeBackgroundAuto();
                     default:mergedImages=null;
                 }
                 myPhoto.setImageBitmap(mergedImages);
@@ -281,6 +305,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
                 italic = (ImageView)alert_view.findViewById(R.id.italic);
                 shapes = (ImageView)alert_view.findViewById(R.id.shapes);
 
+
                 /*******生成YES.NO按鈕以及點下去相對應發生的事******/
 
                 final AlertDialog dialog = builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
@@ -348,11 +373,36 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             @Override
             public void onClick(View v) {
                 VisibleController(false);
+                removeSelectInstructionView.setVisibility(View.VISIBLE);
+                semiRemoveBtn.setVisibility(View.VISIBLE);
+                autoRemoveBtn.setVisibility(View.VISIBLE);
+                checkBtn.setVisibility(View.GONE);
+            }
+        });
+        semiRemoveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkEvent=2;
+                VisibleController(false);
+                removeSelectInstructionView.setVisibility(View.GONE);
+                semiRemoveBtn.setVisibility(View.GONE);
+                autoRemoveBtn.setVisibility(View.GONE);
                 instructionView.setVisibility(View.VISIBLE);
                 paintBoard.setSize(myPhotoWidth,myPhotoHeight);
                 paintBoard.setVisibility(View.VISIBLE);
                 penColorBtn.setVisibility(View.VISIBLE);
-                checkEvent=2;
+
+            }
+        });
+        autoRemoveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkEvent=3;
+                VisibleController(false);
+                areYouSure.setVisibility(View.VISIBLE);
+                removeSelectInstructionView.setVisibility(View.GONE);
+                semiRemoveBtn.setVisibility(View.GONE);
+                autoRemoveBtn.setVisibility(View.GONE);
             }
         });
         /**********筆顏色切換*********/
@@ -389,9 +439,9 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
       //  final float scale = getResources().getDisplayMetrics().density;//獲取螢幕解析度(dpi)
         int ps = Math.round(dips * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
         //int ps = (int) (dips * scale + 0.5f);
-        String type = "宋體";
+        String type = "normal";
 
-        Typeface typeface =Typeface.create(type,Typeface.NORMAL);
+        Typeface typeface;
         if ((boldcCick==true)&&(italicClick==true)){
             typeface =Typeface.create(type,Typeface.BOLD_ITALIC);
             Log.d("test", "1");
@@ -422,7 +472,7 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         stringImageWidth *=ps;
 
 
-        Bitmap textBitmap = Bitmap.createBitmap(stringImageWidth+20, stringImageHeight+20,Bitmap.Config.ARGB_8888);
+        Bitmap textBitmap = Bitmap.createBitmap(stringImageWidth, stringImageHeight,Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(textBitmap);
         if(shapesClick==true) {
             canvas.drawColor(Color.WHITE);
@@ -452,7 +502,6 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         Matrix matrix = new Matrix();
         matrix.postRotate(zoomView.getRotation());
         matrix.postTranslate(positionX*myPhotoHeightScale,positionY*myPhotoHeightScale);//根據螢幕比設定
-
         /*********繪圖**********/
 
         canvas.drawBitmap(firstImage, 0f, 0f, null);
@@ -485,7 +534,6 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
         //bm.recycle(); /*********清除Sticker*********/
         Log.i("Resized", resizedBitmap.getWidth() + "");
         Log.i("Resized", resizedBitmap.getHeight() + "");
-
         return resizedBitmap;
     }
 
@@ -588,6 +636,8 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
 
     public void VisibleController(boolean checked){
         if (checked){
+            removeSelectInstructionView.setVisibility(View.GONE);
+            areYouSure.setVisibility(View.GONE);
             instructionView.setVisibility(View.GONE);
             stringImage.setVisibility(View.GONE);
             textImage.setVisibility(View.GONE);
@@ -595,6 +645,8 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
             penColorBtn.setVisibility(View.GONE);
             checkBtn.setVisibility(View.GONE);
             cancelBtn.setVisibility(View.GONE);
+            semiRemoveBtn.setVisibility(View.GONE);
+            autoRemoveBtn.setVisibility(View.GONE);
             setStickerBtn.setVisibility(View.VISIBLE);
             setTextStingBtn.setVisibility(View.VISIBLE);
             savePhotoBtn.setVisibility(View.VISIBLE);
@@ -615,8 +667,12 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
     public void processRemoveFinish(Bitmap output) {
         myPhoto.setImageBitmap(output);
         deletePic(maskPath);
-
     }
+    @Override
+    public void processRemoveAutoFinish(Bitmap output) {
+        myPhoto.setImageBitmap(output);
+    }
+
     /*********刪除mask**********/
     private void deletePic(String path){
         if(!TextUtils.isEmpty(path)){
@@ -629,10 +685,16 @@ public class emotionDetect extends AppCompatActivity implements removeResponse{
 
     /********去背連線*********/
 
-    private void removeBackground() {
+    private void removeBackgroundSemi() {
         RemoveBackgroundAsyncTask removeBackgroundAsyncTask = new RemoveBackgroundAsyncTask (emotionDetect.this, maskPath);
         removeBackgroundAsyncTask.delegate = this;
         removeBackgroundAsyncTask.execute();
+    }
+    private void removeBackgroundAuto(){
+        RemoveBackgroundAutoTask removeBackgroundAutoTask=new RemoveBackgroundAutoTask(emotionDetect.this,dataPath);
+        removeBackgroundAutoTask.delegate=this;
+        removeBackgroundAutoTask.execute();
+
     }
     /*********分享**********/
     private void shareImg(String imagePath) {

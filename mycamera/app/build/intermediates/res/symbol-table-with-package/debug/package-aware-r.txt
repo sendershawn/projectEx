@@ -640,6 +640,7 @@ drawable disgust
 drawable happy
 drawable ic_check_circle
 drawable ic_close
+drawable ic_color_lens_black_24dp
 drawable ic_eraser50
 drawable ic_file_upload
 drawable ic_format_bold_black_24dp
@@ -705,7 +706,9 @@ id add
 id alertTitle
 id all
 id always
+id areYouSure
 id async
+id auto_remove_btn
 id barrier
 id beginning
 id blocking
@@ -784,6 +787,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id removeBackBtn
+id removeSelectInstructionView
 id right
 id right_icon
 id right_side
@@ -803,6 +807,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id semi_auto_remove_btn
 id setPenColorBtn
 id setSticker
 id shapes

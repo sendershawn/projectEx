@@ -62,9 +62,45 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="78dp"
             android:text="請以白色畫筆塗選前景(必要)\n請以黑色畫筆塗選後景(非必要)\n預設為白色 左下角畫筆可切換顏色"
+            android:background="@color/mygray"
             android:textColor="@color/white"
             android:textSize="20dp" />
-
+        <TextView
+            android:id="@+id/removeSelectInstructionView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="108dp"
+            android:text="選擇去背方式"
+            android:background="@color/mygray"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/areYouSure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="108dp"
+            android:text="確定送出?"
+            android:background="@color/mygray"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/semi_auto_remove_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="半自動"
+            android:layout_marginStart="78dp"
+            android:layout_marginBottom="58dp"
+            android:layout_gravity="left|bottom"/>
+        <Button
+            android:id="@+id/auto_remove_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全自動(建議)"
+            android:layout_marginEnd="78dp"
+            android:layout_marginBottom="58dp"
+            android:layout_gravity="right|bottom"/>
 
 
         <ImageButton

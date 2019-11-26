@@ -32,7 +32,7 @@ public class PaintBoard extends ImageView {
             mPaint.setStrokeCap(Paint.Cap.ROUND);
             mPaint.setColor(Color.WHITE);
             mPaint.setStyle(Paint.Style.FILL);
-            mPaint.setStrokeWidth(100);
+            mPaint.setStrokeWidth(150);
             setFocusable(true);
         }
 

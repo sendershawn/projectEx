@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\github\\projectEx\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "D:\\123\\projectEx-master\\mycamera\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\vence\\.gradle\\caches\\transforms-2\\files-2.1\\d5dfb8f2082ddc5b494535b23907efd8\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\0dec9e20e33f54b57b49af88a7d3427f\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\vence\\.gradle\\caches\\transforms-2\\files-2.1\\4b9cb74b26c37101279a02e1849901de\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-2\\files-2.1\\3daf82234b40e8f1a103ccb9468abc5e\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
